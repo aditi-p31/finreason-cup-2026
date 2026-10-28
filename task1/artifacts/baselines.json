@@ -1,0 +1,21 @@
+{
+ "b0": {
+  "matches_published": true,
+  "published_final_answer": "0.000000",
+  "published_reasoning_steps": "0.000000",
+  "seen_checkpoint": "0",
+  "seen_fac": "0"
+ },
+ "b1": {
+  "matches_published": true,
+  "published_final_answer": "0.020833",
+  "published_reasoning_steps": "0.011574",
+  "seen_checkpoint": "0.0115740740740741",
+  "seen_fac": "0.0208333333333333"
+ },
+ "b2": {
+  "note": "Fin-o1-8B; published only, not reproducible without the model",
+  "published_final_answer": "0.285873",
+  "published_reasoning_steps": "0.592606"
+ }
+}

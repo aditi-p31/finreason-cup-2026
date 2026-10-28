@@ -1,0 +1,32 @@
+{
+ "naive_tokeniser": {
+  "distinct_shape_keys": 457,
+  "exact_shape_coverage": {
+   "leaderboard_580": {
+    "cases": 580,
+    "exact_shape_hits": 572
+   },
+   "test_928": {
+    "cases": 928,
+    "exact_shape_hits": 560
+   }
+  },
+  "shape_keys_mapping_to_more_than_one_template": 0,
+  "templates_with_unstable_parameter_count": 12
+ },
+ "rational_aware_tokeniser": {
+  "distinct_shape_keys": 321,
+  "exact_shape_coverage": {
+   "leaderboard_580": {
+    "cases": 580,
+    "exact_shape_hits": 578
+   },
+   "test_928": {
+    "cases": 928,
+    "exact_shape_hits": 578
+   }
+  },
+  "shape_keys_mapping_to_more_than_one_template": 0,
+  "templates_with_unstable_parameter_count": 0
+ }
+}

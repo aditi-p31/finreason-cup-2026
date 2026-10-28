@@ -1,0 +1,26 @@
+{
+ "coverage": {
+  "cases": 928,
+  "cases_with_final_answer": 928,
+  "cases_with_validated_solver": 580,
+  "match_methods": {
+   "exact": 578,
+   "fuzzy": 2,
+   "unmatched": 348
+  },
+  "predictions_path": "artifacts/test_predictions.jsonl",
+  "slots_emitted": 1492,
+  "slots_expected": 1492,
+  "split": "test"
+ },
+ "official_package": {
+  "_exit_code": 0,
+  "archive_sha256": "42111f7f1d139b86904036bcfc43ef3ed1be2f5b0281ab4e761bcd101bdea221",
+  "dataset_version": "task1-v4",
+  "predictions_jsonl_sha256": "d1007b775c5b047712d540dfbeb4156177fa19b8216390028d7a0855a1db0828",
+  "questions_jsonl_sha256": "0a89a55aef94e812b03db27896c8de9bd20c71eb0925692bd99f7da7afbb3456",
+  "record_count": 928,
+  "schema_version": "finreason.task1.package/2.0.0",
+  "status": "PASS"
+ }
+}

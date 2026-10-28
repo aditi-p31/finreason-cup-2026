@@ -1,0 +1,32 @@
+{
+ "all": {
+  "final_answer": {
+   "accuracy": 0.134483,
+   "cases": 290,
+   "correct": 39,
+   "guessed": 289
+  },
+  "slots": {
+   "accuracy": 0.104247,
+   "correct": 54,
+   "guessed": 481,
+   "slots": 518
+  }
+ },
+ "hidden_like": {
+  "final_answer": {
+   "accuracy": 0.051724,
+   "cases": 174,
+   "correct": 9,
+   "guessed": 174
+  },
+  "slots": {
+   "accuracy": 0.084184,
+   "correct": 33,
+   "guessed": 364,
+   "slots": 392
+  }
+ },
+ "note": "hidden_like restricts to intermediate+advanced templates, the only difficulties present in the hidden stratum",
+ "protocol": "leave-one-template-out over the 290 dev cases"
+}

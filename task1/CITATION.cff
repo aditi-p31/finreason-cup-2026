@@ -1,0 +1,143 @@
+cff-version: 1.2.0
+message: If you use this software, please cite the paper below, and cite FinChain and the FinReason Cup overviews
+  as the organizers request (see README.md).
+title: 'finreason-solution: exact solver induction for FinReason Cup Task 1'
+version: '0.1'
+license: Apache-2.0
+type: software
+authors:
+- given-names: Aditi
+  family-names: Patodiya
+keywords:
+- FinReason Cup
+- financial reasoning
+- program induction
+- exact arithmetic
+preferred-citation:
+  type: unpublished
+  title: 'Executable Financial Reasoning in the FinReason Cup: Program Induction and Rule-Based Audit Verification'
+  authors:
+  - given-names: Aditi
+    family-names: Patodiya
+  year: 2026
+  notes: FinReason Cup 2026 working notes, Tasks 1 and 3, IEEE International Conference on Big Data (BigData 2026)
+references:
+- type: conference-paper
+  title: 'FinChain: A Symbolic Benchmark for Verifiable Chain-of-Thought Financial Reasoning'
+  authors:
+  - family-names: Xie
+    given-names: Zhuohan
+  - family-names: Orel
+    given-names: Daniil
+  - family-names: Thareja
+    given-names: Rushil
+  - family-names: Sahnan
+    given-names: Dhruv
+  - family-names: Madmoun
+    given-names: Hachem
+  - family-names: Zhang
+    given-names: Fan
+  - family-names: Banerjee
+    given-names: Debopriyo
+  - family-names: Georgiev
+    given-names: Georgi Nenkov
+  - family-names: Peng
+    given-names: Xueqing
+  - family-names: Qian
+    given-names: Lingfei
+  - family-names: Huang
+    given-names: Jimin
+  - family-names: Su
+    given-names: Jinyan
+  - family-names: Singh
+    given-names: Aaryamonvikram
+  - family-names: Xing
+    given-names: Rui
+  - family-names: Elbadry
+    given-names: Rania
+  - family-names: Xu
+    given-names: Chen
+  - family-names: Li
+    given-names: Haonan
+  - family-names: Koto
+    given-names: Fajri
+  - family-names: Koychev
+    given-names: Ivan
+  - family-names: Chakraborty
+    given-names: Tanmoy
+  - family-names: Wang
+    given-names: Yuxia
+  - family-names: Lahlou
+    given-names: Salem
+  - family-names: Stoyanov
+    given-names: Veselin
+  - family-names: Ananiadou
+    given-names: Sophia
+  - family-names: Nakov
+    given-names: Preslav
+  collection-title: 'Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume
+    1: Long Papers)'
+  publisher:
+    name: Association for Computational Linguistics
+  year: 2026
+  start: 14529
+  end: 14553
+  doi: 10.18653/v1/2026.acl-long.662
+  url: https://aclanthology.org/2026.acl-long.662/
+- type: unpublished
+  title: 'Overview of the FinReason Cup 2026: Agentic Financial Reasoning, Hedging, and Audit Verification'
+  authors:
+  - family-names: Xie
+    given-names: Zhuohan
+  - family-names: Wang
+    given-names: Yan
+  - family-names: Jiang
+    given-names: Yuechen
+  - family-names: Peng
+    given-names: Xueqing
+  - family-names: Qian
+    given-names: Lingfei
+  - family-names: Cao
+    given-names: Yupeng
+  - family-names: Chen
+    given-names: Yankai
+  - family-names: Liu
+    given-names: Xue (Steve)
+  - family-names: Nakov
+    given-names: Preslav
+  year: 2026
+  url: https://the-finai.github.io/IEEE-bigdata-cup/
+  notes: Organizer BibTeX key finreason2026overview; manuscript in preparation, proposed author list and order (organizers,
+    2026); refresh from the cup site before use.
+- type: unpublished
+  title: 'Overview of the FinReason Cup 2026 Task 1: Verifiable Financial Chain Reasoning'
+  authors:
+  - family-names: Xie
+    given-names: Zhuohan
+  - family-names: Wang
+    given-names: Yan
+  - family-names: Jiang
+    given-names: Yuechen
+  - family-names: Peng
+    given-names: Xueqing
+  - family-names: Qian
+    given-names: Lingfei
+  - family-names: Cao
+    given-names: Yupeng
+  - family-names: Chen
+    given-names: Yankai
+  - family-names: Liu
+    given-names: Xue (Steve)
+  - family-names: Nakov
+    given-names: Preslav
+  year: 2026
+  url: https://the-finai.github.io/IEEE-bigdata-cup/task1/
+  notes: Organizer BibTeX key finreason2026task1overview; manuscript in preparation, proposed author list and order
+    (organizers, 2026); refresh from the cup site before use.
+- type: data
+  title: FinReason Cup Task 1 release, dataset version task1-v4
+  authors:
+  - name: FinReason Cup organizers (The Fin AI)
+  url: https://the-finai.github.io/IEEE-bigdata-cup/task1/
+  license: CC-BY-4.0
+  year: 2026

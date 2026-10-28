@@ -1,0 +1,574 @@
+{
+ "rows": [
+  {
+   "before": {
+    "final_perfect": false,
+    "n_slots": 3,
+    "slots_validated": 3
+   },
+   "contract_test": {
+    "final_ok": 11,
+    "final_perfect": true,
+    "n_instances": 11,
+    "n_slots": 3,
+    "slot_ok": {
+     "capm_real_equity_cost_percent": 11,
+     "real_market_return_percent": 11,
+     "weighted_real_debt_cost_percent": 11
+    },
+    "slots_perfect": true
+   },
+   "dev_only_contract_test": {
+    "final_ok": 1,
+    "final_perfect": true,
+    "n_instances": 1,
+    "n_slots": 3,
+    "slot_ok": {
+     "capm_real_equity_cost_percent": 1,
+     "real_market_return_percent": 1,
+     "weighted_real_debt_cost_percent": 1
+    },
+    "slots_perfect": true
+   },
+   "final": "(((p0 * trace_2) + (((p1 + p2) * trace_3) * (1 - (p9 / 100)))) / (p0 + (p1 + p2)))",
+   "finchain_generator": "corporate_finance/wacc.py::template_inflation_adjusted_capm_wacc",
+   "recovered": "Fisher real market return; CAPM equity cost; value-weighted debt cost; WACC = wE*ke + wD*kd*(1-T).",
+   "ships": true,
+   "slots": {
+    "capm_real_equity_cost_percent": "(p6 + (p3 * (trace_1 - p6)))",
+    "real_market_return_percent": "(100 * (((1 + (p4 / 100)) / (1 + (p5 / 100))) - 1))",
+    "weighted_real_debt_cost_percent": "(((p1 * p7) + (p2 * p8)) / (p1 + p2))"
+   },
+   "template_id": "fp.corporate_finance.wacc.inflation_adjusted_capm_wacc.advanced.v1",
+   "train_only_contract_test": {
+    "final_ok": 10,
+    "final_perfect": true,
+    "n_instances": 10,
+    "n_slots": 3,
+    "slot_ok": {
+     "capm_real_equity_cost_percent": 10,
+     "real_market_return_percent": 10,
+     "weighted_real_debt_cost_percent": 10
+    },
+    "slots_perfect": true
+   }
+  },
+  {
+   "before": {
+    "final_perfect": false,
+    "n_slots": 3,
+    "slots_validated": 3
+   },
+   "contract_test": {
+    "final_ok": 11,
+    "final_perfect": true,
+    "n_instances": 11,
+    "n_slots": 3,
+    "slot_ok": {
+     "down_payoff_trace": 11,
+     "up_payoff_trace": 11,
+     "up_probability_trace": 11
+    },
+    "slots_perfect": true
+   },
+   "dev_only_contract_test": {
+    "final_ok": 1,
+    "final_perfect": true,
+    "n_instances": 1,
+    "n_slots": 3,
+    "slot_ok": {
+     "down_payoff_trace": 1,
+     "up_payoff_trace": 1,
+     "up_probability_trace": 1
+    },
+    "slots_perfect": true
+   },
+   "final": "(((trace_3 * trace_1) + ((1 - trace_3) * trace_2)) / (1 + (p4 / 100)))",
+   "finchain_generator": "financial_markets/option_pricing.py::template_op_hard1 (cup rewrite: one-period binomial)",
+   "recovered": "payoffs max(S*u-K,0) and max(S*d-K,0); q = ((1+r)-d)/(u-d); C = (q*Cu + (1-q)*Cd)/(1+r).",
+   "ships": true,
+   "slots": {
+    "down_payoff_trace": "max(((p0 * p3) - p1), 0)",
+    "up_payoff_trace": "max(((p0 * p2) - p1), 0)",
+    "up_probability_trace": "(((1 + (p4 / 100)) - p3) / (p2 - p3))"
+   },
+   "template_id": "fp.financial_markets.option_pricing.one_period_binomial_call.intermediate.v1",
+   "train_only_contract_test": {
+    "final_ok": 10,
+    "final_perfect": true,
+    "n_instances": 10,
+    "n_slots": 3,
+    "slot_ok": {
+     "down_payoff_trace": 10,
+     "up_payoff_trace": 10,
+     "up_probability_trace": 10
+    },
+    "slots_perfect": true
+   }
+  },
+  {
+   "before": {
+    "final_perfect": false,
+    "n_slots": 2,
+    "slots_validated": 1
+   },
+   "contract_test": {
+    "final_ok": 11,
+    "final_perfect": true,
+    "n_instances": 11,
+    "n_slots": 2,
+    "slot_ok": {
+     "trace_1": 11,
+     "trace_2": 11
+    },
+    "slots_perfect": true
+   },
+   "dev_only_contract_test": {
+    "final_ok": 1,
+    "final_perfect": true,
+    "n_instances": 1,
+    "n_slots": 2,
+    "slot_ok": {
+     "trace_1": 1,
+     "trace_2": 1
+    },
+    "slots_perfect": true
+   },
+   "final": "((p0 + trace_1) + trace_2)",
+   "finchain_generator": "mergers_and_acquisitions/deal_structure.py::template_earnout_with_bonus_calculation",
+   "recovered": "prorated earn-out capped at its maximum; bonus on revenue above 110% of target, capped at the bonus cap.",
+   "ships": true,
+   "slots": {
+    "trace_1": "min(p1, ((p1 * p3) / p2))",
+    "trace_2": "min(p5, (max((p3 - (p2 * (p6 / 100))), 0) * (p4 / 100)))"
+   },
+   "template_id": "fp.mergers_and_acquisitions.deal_structure.earnout_with_bonus_calculation.intermediate.v1",
+   "train_only_contract_test": {
+    "final_ok": 10,
+    "final_perfect": true,
+    "n_instances": 10,
+    "n_slots": 2,
+    "slot_ok": {
+     "trace_1": 10,
+     "trace_2": 10
+    },
+    "slots_perfect": true
+   }
+  },
+  {
+   "before": {
+    "final_perfect": false,
+    "n_slots": 2,
+    "slots_validated": 2
+   },
+   "contract_test": {
+    "final_ok": 11,
+    "final_perfect": true,
+    "n_instances": 11,
+    "n_slots": 2,
+    "slot_ok": {
+     "trace_1": 11,
+     "trace_2": 11
+    },
+    "slots_perfect": true
+   },
+   "dev_only_contract_test": {
+    "final_ok": 1,
+    "final_perfect": true,
+    "n_instances": 1,
+    "n_slots": 2,
+    "slot_ok": {
+     "trace_1": 1,
+     "trace_2": 1
+    },
+    "slots_perfect": true
+   },
+   "final": "if (p3 - p2) > 0 -> (trace_2 * p4); else -> trace_2",
+   "finchain_generator": "mergers_and_acquisitions/deal_structure.py::template_leveraged_buyout_adjusted_shares_calculation",
+   "recovered": "equity slice / share price; the 5 percent bonus applies only strictly below the price threshold.",
+   "ships": true,
+   "slots": {
+    "trace_1": "(p0 * (1 - (p1 / 100)))",
+    "trace_2": "(trace_1 / p2)"
+   },
+   "template_id": "fp.mergers_and_acquisitions.deal_structure.leveraged_buyout_adjusted_shares_calculation.intermediate.v1",
+   "train_only_contract_test": {
+    "final_ok": 10,
+    "final_perfect": true,
+    "n_instances": 10,
+    "n_slots": 2,
+    "slot_ok": {
+     "trace_1": 10,
+     "trace_2": 10
+    },
+    "slots_perfect": true
+   }
+  },
+  {
+   "before": {
+    "final_perfect": false,
+    "n_slots": 2,
+    "slots_validated": 2
+   },
+   "contract_test": {
+    "final_ok": 11,
+    "final_perfect": true,
+    "n_instances": 11,
+    "n_slots": 2,
+    "slot_ok": {
+     "trace_1": 11,
+     "trace_2": 11
+    },
+    "slots_perfect": true
+   },
+   "dev_only_contract_test": {
+    "final_ok": 1,
+    "final_perfect": true,
+    "n_instances": 1,
+    "n_slots": 2,
+    "slot_ok": {
+     "trace_1": 1,
+     "trace_2": 1
+    },
+    "slots_perfect": true
+   },
+   "final": "(((((((p1 * ((1 + (p2 / 100)) ** 0)) / ((1 + (p5 / 100)) ** 1)) + ((p1 * ((1 + (p2 / 100)) ** 1)) / ((1 + (p5 / 100)) ** 2))) + ((p1 * ((1 + (p2 / 100)) ** 2)) / ((1 + (p5 / 100)) ** 3))) + ((p1 * ((1 + (p2 / 100)) ** 3)) / ((1 + (p5 / 100)) ** 4))) + ((p1 * ((1 + (p2 / 100)) ** 4)) / ((1 + (p5 / 100)) ** 5))) + (trace_2 / ((1 + (p5 / 100)) ** 5)))",
+   "finchain_generator": "mergers_and_acquisitions/due_diligence.py::template_due_diligence_dcf_valuation",
+   "recovered": "five-year growing FCF strip discounted year by year, plus the Gordon terminal discounted five years.",
+   "ships": true,
+   "slots": {
+    "trace_1": "(p1 * ((1 + (p2 / 100)) ** 4))",
+    "trace_2": "((trace_1 * (1 + (p6 / 100))) / ((p5 / 100) - (p6 / 100)))"
+   },
+   "template_id": "fp.mergers_and_acquisitions.due_diligence.due_diligence_dcf_valuation.advanced.v1",
+   "train_only_contract_test": {
+    "final_ok": 10,
+    "final_perfect": true,
+    "n_instances": 10,
+    "n_slots": 2,
+    "slot_ok": {
+     "trace_1": 10,
+     "trace_2": 10
+    },
+    "slots_perfect": true
+   }
+  },
+  {
+   "before": {
+    "final_perfect": false,
+    "n_slots": 2,
+    "slots_validated": 1
+   },
+   "contract_test": {
+    "final_ok": 11,
+    "final_perfect": true,
+    "n_instances": 11,
+    "n_slots": 2,
+    "slot_ok": {
+     "trace_1": 11,
+     "trace_2": 11
+    },
+    "slots_perfect": true
+   },
+   "dev_only_contract_test": {
+    "final_ok": 1,
+    "final_perfect": true,
+    "n_instances": 1,
+    "n_slots": 2,
+    "slot_ok": {
+     "trace_1": 1,
+     "trace_2": 1
+    },
+    "slots_perfect": true
+   },
+   "final": "(trace_2 - (p7 - p8))",
+   "finchain_generator": "mergers_and_acquisitions/valuation_methods.py::template_dcf_3yr_gordon_to_equity",
+   "recovered": "terminal value at year 3; enterprise value = PV(FCFs) + PV(TV); equity = EV - net debt.",
+   "ships": true,
+   "slots": {
+    "trace_1": "((p4 * (1 + (p6 / 100))) / ((p5 / 100) - (p6 / 100)))",
+    "trace_2": "((((p2 / ((1 + (p5 / 100)) ** 1)) + (p3 / ((1 + (p5 / 100)) ** 2))) + (p4 / ((1 + (p5 / 100)) ** 3))) + (trace_1 / ((1 + (p5 / 100)) ** 3)))"
+   },
+   "template_id": "fp.mergers_and_acquisitions.valuation_methods.dcf_3yr_gordon_to_equity.advanced.v1",
+   "train_only_contract_test": {
+    "final_ok": 10,
+    "final_perfect": true,
+    "n_instances": 10,
+    "n_slots": 2,
+    "slot_ok": {
+     "trace_1": 10,
+     "trace_2": 10
+    },
+    "slots_perfect": true
+   }
+  },
+  {
+   "before": {
+    "final_perfect": false,
+    "n_slots": 2,
+    "slots_validated": 0
+   },
+   "contract_test": {
+    "final_ok": 11,
+    "final_perfect": true,
+    "n_instances": 11,
+    "n_slots": 2,
+    "slot_ok": {
+     "trace_1": 11,
+     "trace_2": 11
+    },
+    "slots_perfect": true
+   },
+   "dev_only_contract_test": {
+    "final_ok": 1,
+    "final_perfect": true,
+    "n_instances": 1,
+    "n_slots": 2,
+    "slot_ok": {
+     "trace_1": 1,
+     "trace_2": 1
+    },
+    "slots_perfect": true
+   },
+   "final": "(((trace_1 + trace_2) - p7) + p8)",
+   "finchain_generator": "mergers_and_acquisitions/valuation_methods.py::template_dcf_three_year_terminal_to_equity",
+   "recovered": "PV of three FCFs; PV of the Gordon terminal; equity = both minus debt plus cash.",
+   "ships": true,
+   "slots": {
+    "trace_1": "(((p2 / ((1 + (p5 / 100)) ** 1)) + (p3 / ((1 + (p5 / 100)) ** 2))) + (p4 / ((1 + (p5 / 100)) ** 3)))",
+    "trace_2": "(((p4 * (1 + (p6 / 100))) / ((p5 / 100) - (p6 / 100))) / ((1 + (p5 / 100)) ** 3))"
+   },
+   "template_id": "fp.mergers_and_acquisitions.valuation_methods.dcf_three_year_terminal_to_equity.intermediate.v1",
+   "train_only_contract_test": {
+    "final_ok": 10,
+    "final_perfect": true,
+    "n_instances": 10,
+    "n_slots": 2,
+    "slot_ok": {
+     "trace_1": 10,
+     "trace_2": 10
+    },
+    "slots_perfect": true
+   }
+  },
+  {
+   "before": {
+    "final_perfect": false,
+    "n_slots": 3,
+    "slots_validated": 1
+   },
+   "contract_test": {
+    "final_ok": 11,
+    "final_perfect": true,
+    "n_instances": 11,
+    "n_slots": 3,
+    "slot_ok": {
+     "confidence_multiplier_trace": 11,
+     "weighted_ratio_trace": 11,
+     "weighted_volatility_trace": 11
+    },
+    "slots_perfect": true
+   },
+   "dev_only_contract_test": {
+    "final_ok": 1,
+    "final_perfect": true,
+    "n_instances": 1,
+    "n_slots": 3,
+    "slot_ok": {
+     "confidence_multiplier_trace": 1,
+     "weighted_ratio_trace": 1,
+     "weighted_volatility_trace": 1
+    },
+    "slots_perfect": true
+   },
+   "final": "(((p0 * trace_2) * p13) * trace_3)",
+   "finchain_generator": "risk_management/var.py::template_multi_asset_var",
+   "recovered": "S = (w1*s1 + w2*s2 + w3*s3)/100; VaR = V * (S/100) * t * (1 + (100-c)/100).",
+   "ships": true,
+   "slots": {
+    "confidence_multiplier_trace": "(1 + (1 - (p14 / 100)))",
+    "weighted_ratio_trace": "(trace_1 / 100)",
+    "weighted_volatility_trace": "((((p2 * p8) + (p4 * p10)) + (p6 * p12)) / 100)"
+   },
+   "template_id": "fp.risk_management.var.multi_asset.intermediate.v1",
+   "train_only_contract_test": {
+    "final_ok": 10,
+    "final_perfect": true,
+    "n_instances": 10,
+    "n_slots": 3,
+    "slot_ok": {
+     "confidence_multiplier_trace": 10,
+     "weighted_ratio_trace": 10,
+     "weighted_volatility_trace": 10
+    },
+    "slots_perfect": true
+   }
+  },
+  {
+   "before": {
+    "final_perfect": false,
+    "n_slots": 2,
+    "slots_validated": 2
+   },
+   "contract_test": {
+    "final_ok": 11,
+    "final_perfect": true,
+    "n_instances": 11,
+    "n_slots": 2,
+    "slot_ok": {
+     "credits_purchased_trace": 11,
+     "eligible_rebate_trace": 11
+    },
+    "slots_perfect": true
+   },
+   "dev_only_contract_test": {
+    "final_ok": 1,
+    "final_perfect": true,
+    "n_instances": 1,
+    "n_slots": 2,
+    "slot_ok": {
+     "credits_purchased_trace": 1,
+     "eligible_rebate_trace": 1
+    },
+    "slots_perfect": true
+   },
+   "final": "if (trace_1 - p9) > 0 -> trace_2; else -> 0",
+   "finchain_generator": "sustainable_finance/carbon_credits.py::template_carbon_credit_rebate",
+   "recovered": "Q = I/P; rebate = Q*rate, paid only when Q > T (equality does not qualify).",
+   "ships": true,
+   "slots": {
+    "credits_purchased_trace": "(p0 / p3)",
+    "eligible_rebate_trace": "(trace_1 * p6)"
+   },
+   "template_id": "fp.sustainable_finance.carbon_credits.credit_rebate.basic.v1",
+   "train_only_contract_test": {
+    "final_ok": 10,
+    "final_perfect": true,
+    "n_instances": 10,
+    "n_slots": 2,
+    "slot_ok": {
+     "credits_purchased_trace": 10,
+     "eligible_rebate_trace": 10
+    },
+    "slots_perfect": true
+   }
+  },
+  {
+   "before": {
+    "final_perfect": false,
+    "n_slots": 3,
+    "slots_validated": 3
+   },
+   "contract_test": {
+    "final_ok": 11,
+    "final_perfect": true,
+    "n_instances": 11,
+    "n_slots": 3,
+    "slot_ok": {
+     "discounted_cost_trace": 11,
+     "gross_cost_trace": 11,
+     "total_credits_trace": 11
+    },
+    "slots_perfect": true
+   },
+   "dev_only_contract_test": {
+    "final_ok": 1,
+    "final_perfect": true,
+    "n_instances": 1,
+    "n_slots": 3,
+    "slot_ok": {
+     "discounted_cost_trace": 1,
+     "gross_cost_trace": 1,
+     "total_credits_trace": 1
+    },
+    "slots_perfect": true
+   },
+   "final": "if (trace_1 - p14) > 0 -> trace_3; else -> trace_2",
+   "finchain_generator": "sustainable_finance/carbon_credits.py::template_multi_company_synergy",
+   "recovered": "gross = (t1+t2)*price; the synergy discount applies only when total credits > threshold.",
+   "ships": true,
+   "slots": {
+    "discounted_cost_trace": "(trace_2 * (1 - (p11 / 100)))",
+    "gross_cost_trace": "(trace_1 * p8)",
+    "total_credits_trace": "(p1 + p4)"
+   },
+   "template_id": "fp.sustainable_finance.carbon_credits.multi_company_synergy.intermediate.v1",
+   "train_only_contract_test": {
+    "final_ok": 10,
+    "final_perfect": true,
+    "n_instances": 10,
+    "n_slots": 3,
+    "slot_ok": {
+     "discounted_cost_trace": 10,
+     "gross_cost_trace": 10,
+     "total_credits_trace": 10
+    },
+    "slots_perfect": true
+   }
+  },
+  {
+   "before": {
+    "final_perfect": false,
+    "n_slots": 3,
+    "slots_validated": 2
+   },
+   "contract_test": {
+    "final_ok": 11,
+    "final_perfect": true,
+    "n_instances": 11,
+    "n_slots": 3,
+    "slot_ok": {
+     "interest_earned_trace": 11,
+     "reinvestment_contribution_trace": 11,
+     "total_bonus_trace": 11
+    },
+    "slots_perfect": true
+   },
+   "dev_only_contract_test": {
+    "final_ok": 1,
+    "final_perfect": true,
+    "n_instances": 1,
+    "n_slots": 3,
+    "slot_ok": {
+     "interest_earned_trace": 1,
+     "reinvestment_contribution_trace": 1,
+     "total_bonus_trace": 1
+    },
+    "slots_perfect": true
+   },
+   "final": "(((trace_1 + (trace_1 * (p9 / 100))) + trace_2) + trace_3)",
+   "finchain_generator": "sustainable_finance/green_bonds.py::template_green_bond_advanced_comprehensive_analysis",
+   "recovered": "interest = P*((1+c)^T - 1); bonus = (savings/block)*rate*T; reinvestment = (pct*interest/T) * geometric sum of (1+q)^k, k=0..T-1; total = interest + tax credit + bonus + reinvestment.",
+   "ships": true,
+   "slots": {
+    "interest_earned_trace": "(p0 * (((1 + (p3 / 100)) ** p6) - 1))",
+    "reinvestment_contribution_trace": "(((p19 / 100) * (trace_1 / p6)) * ((((1 + (p22 / 100)) ** p6) - 1) / (p22 / 100)))",
+    "total_bonus_trace": "(((p12 / p16) * p15) * p6)"
+   },
+   "template_id": "fp.sustainable_finance.green_bonds.comprehensive_analysis.advanced.v1",
+   "train_only_contract_test": {
+    "final_ok": 10,
+    "final_perfect": true,
+    "n_instances": 10,
+    "n_slots": 3,
+    "slot_ok": {
+     "interest_earned_trace": 10,
+     "reinvestment_contribution_trace": 10,
+     "total_bonus_trace": 10
+    },
+    "slots_perfect": true
+   }
+  }
+ ],
+ "summary": {
+  "forms_registered": 11,
+  "forms_resisting": [],
+  "forms_shipping": 11,
+  "held_out_dev_finals_matched": 11,
+  "held_out_dev_slots_expected": 27,
+  "held_out_dev_slots_matched": 27,
+  "slot_definitions_validated_delta": 7,
+  "templates_validated_after": 290,
+  "templates_validated_before": 279
+ }
+}

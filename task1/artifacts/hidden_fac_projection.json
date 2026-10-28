@@ -1,0 +1,53 @@
+{
+ "aggregation": "hidden_fac = mean over 12 domains of the mean over that domain's hidden templates of the template's case-mean fac; the scorer's topic and difficulty layers collapse to this when each topic carries one intermediate and one advanced hidden template",
+ "domain_classifier_dev_accuracy": {
+  "correct": 282,
+  "n": 290,
+  "rate": 0.972414
+ },
+ "hidden_templates": 121,
+ "per_domain_template_mean_at_decimal_rate_0.01": {
+  "accounting_and_financial_reporting": 0.01,
+  "corporate_finance": 0.085219,
+  "crypto_finance": 0.038207,
+  "finance_regulation": 0.297697,
+  "financial_markets": 0.122828,
+  "financial_ratios": 0.043848,
+  "fintech": 0.085219,
+  "investment_analysis": 0.055131,
+  "mergers_and_acquisitions": 0.047609,
+  "personal_finance": 0.117778,
+  "risk_management": 0.058355,
+  "sustainable_finance": 0.122828
+ },
+ "projections": {
+  "decimal_guess_rate_0.00": {
+   "delta": 0.008737,
+   "hidden_fac_alphabetical_first": 0.073919,
+   "hidden_fac_residual_avoiding": 0.082656,
+   "micro_alphabetical_first": 0.08046,
+   "micro_residual_avoiding": 0.090961
+  },
+  "decimal_guess_rate_0.01": {
+   "delta": 0.008737,
+   "hidden_fac_alphabetical_first": 0.081656,
+   "hidden_fac_residual_avoiding": 0.090393,
+   "micro_alphabetical_first": 0.088046,
+   "micro_residual_avoiding": 0.098548
+  },
+  "decimal_guess_rate_0.02": {
+   "delta": 0.008737,
+   "hidden_fac_alphabetical_first": 0.089393,
+   "hidden_fac_residual_avoiding": 0.098131,
+   "micro_alphabetical_first": 0.095632,
+   "micro_residual_avoiding": 0.106134
+  },
+  "decimal_guess_rate_0.03": {
+   "delta": 0.008737,
+   "hidden_fac_alphabetical_first": 0.097131,
+   "hidden_fac_residual_avoiding": 0.105868,
+   "micro_alphabetical_first": 0.103218,
+   "micro_residual_avoiding": 0.11372
+  }
+ }
+}

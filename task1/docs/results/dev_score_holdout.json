@@ -1,0 +1,42 @@
+{
+ "coverage": {
+  "cases": 290,
+  "cases_with_final_answer": 290,
+  "cases_with_validated_solver": 289,
+  "match_methods": {
+   "exact": 289,
+   "fuzzy": 1
+  },
+  "predictions_path": "artifacts_holdout/dev_predictions.jsonl",
+  "slots_emitted": 517,
+  "slots_expected": 518,
+  "split": "dev"
+ },
+ "official_score_dev": {
+  "_exit_code": 0,
+  "counts": {
+   "cases": 290,
+   "checkpoint_cases": 258,
+   "checkpoint_templates": 258,
+   "matched_final_answers": 275,
+   "matched_slots": 505,
+   "total_slots": 518
+  },
+  "dataset_version": "task1-v4",
+  "diagnostics": {
+   "micro_checkpoint": "0.9749034749034749",
+   "micro_fac": "0.9482758620689655"
+  },
+  "ranking_tuple": null,
+  "schema_version": "finreason.task1.report/2.0.0",
+  "scorer_version": "finreason.task1.scorer/2.0.0",
+  "scores": {
+   "combined_checkpoint": null,
+   "combined_fac": null,
+   "hidden_checkpoint": null,
+   "hidden_fac": null,
+   "seen_checkpoint": "0.9820238095238095",
+   "seen_fac": "0.9492857142857143"
+  }
+ }
+}

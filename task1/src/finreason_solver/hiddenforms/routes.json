@@ -1,0 +1,592 @@
+{
+ "about": "route table for finreason_solver.hiddenforms, written by hidden/export_forms.py",
+ "forms": {
+  "H001": {
+   "sha256": "10beea99738831f1aed169f20357a9402a6d37ff7833f2425e63abd3f02375f1",
+   "shape": "A company has current assets of <N> and current liabilities of <N> in USD millions. It plans a cash-funded non-current-asset purchase of <N>, which reduces current assets by the purchase amount. The required current ratio is one plus the ratio <N>. Determine the maximum additional short-term borrowing that can be added to both cash and current liabilities while exactly meeting the required current ratio. Report the result in USD millions, rounded to two decimal places using half-up rounding.",
+   "type": "decimal"
+  },
+  "H002": {
+   "sha256": "d03713881e44925cebf2df224d04cf6de9c69988bbc87c2016057f472968fbb9",
+   "shape": "Conditional on one modeled fraud event, exactly one of three mutually exclusive and exhaustive loss states occurs. The minor state has probability <N>. Conditional on the minor state not occurring, the moderate state has probability <N>; otherwise the severe state occurs. Their gross fraud losses are <N>, <N>, and <N> USD, and the account reimburses fractions <N>, <N>, and <N>. Compute actual expected reimbursement across the three states. Then form a scenario-specific flat-rate benchmark by applying the probability-weighted mean reimbursement rate uniformly to expected gross loss. Report actual expected reimbursement minus that benchmark in USD. A positive result means state-specific rates allocate more expected reimbursement to higher-loss states than the flat-rate benchmark, while a negative result means less. This is a loss-severity alignment diagnostic, not an industry, adequacy, premium, or actuarial benchmark. Use exact arithmetic and round the final amount half up to two decimals.",
+   "type": "decimal"
+  },
+  "H003": {
+   "sha256": "d78caa8463c12bae737959194cd6fc35f00db82888c6ca491d2d4b45cbfd9550",
+   "shape": "Two segments use one planning period and currency. Segment A has revenue <N>, pre-shared-cost pre-tax profit margin <N>, and tax rate <N>. Segment B has revenue <N>, pre-shared-cost pre-tax profit margin <N>, and tax rate <N>. These margins are after all segment-specific operating costs but before allocating one shared deductible cost pool of <N>. Allocate fraction x of that pool to A and the complementary fraction to B exactly once. In this fictional planning scenario, each tax rate is applied to the resulting positive pre-tax profit and no claim is made about actual tax or transfer-pricing rules. What percentage x of the shared cost pool must be allocated to A so the two after-tax profit margin ratios are equal? Use exact arithmetic and round only the final percentage to two decimal places with half-up rounding.",
+   "type": "decimal"
+  },
+  "H004": {
+   "sha256": "55d766a4dad7037bbb905a4f3192753664bf3e075272c52e31805b19e8c88f10",
+   "shape": "A portfolio worth <N> faces market shock ratio <N> with loss sensitivity <N>, plus liquidity shock ratio <N> applied directly to portfolio value. The institution expects to recover ratio <N> of the combined gross loss. Compute the net reserve required after subtracting the recoverable amount from gross stress loss.",
+   "type": "decimal"
+  },
+  "H005": {
+   "sha256": "bc70a49ec139dd5bbbb7789abbe2de9704344e2e7d522a82ee0d2be858f1bb7d",
+   "shape": "Treat one carbon credit as covering one ton of CO<N>e. A company has internal abatement capacity <N> tons of CO<N>e and commits to utilization <N>. Mobilizing internal abatement costs <N> USD, plus <N> USD for each ton internally abated. Compute the carbon-credit price in USD per ton of CO<N>e at which buying credits for the same planned abatement quantity costs exactly as much as internal abatement.",
+   "type": "decimal"
+  },
+  "H006": {
+   "sha256": "47f1fd88aecc6daf26fb19155e37bd4b25ed7c938a40979286a4e9d78afc64a4",
+   "shape": "A portfolio is worth <N>, but only share <N> is exposed to one factor. The exposed portion has signed sensitivity <N>. Determine the signed factor shock required to produce target portfolio value change <N>, and report that shock as a percentage.",
+   "type": "decimal"
+  },
+  "H007": {
+   "sha256": "19306c6005ffdb0d01cd9a51279ca6a92b8078cf2cd23f30488d2244188bab9f",
+   "shape": "Compare two bonds over a common holding horizon and valuation date. Bond A has expected redemption cash <N>, aggregate coupon cash <N>, clean price <N>, settlement cost <N>, and modified duration <N>. Bond B has expected redemption cash <N>, aggregate coupon cash <N>, clean price <N>, settlement cost <N>, and modified duration <N>. Each settlement cost is all acquisition cash beyond the clean quote, including accrued interest and fees where applicable; do not add those amounts again. Both durations use the same acquisition-date convention and basis. For each bond, define total received cash as redemption plus aggregate coupons, total acquisition outlay as clean price plus settlement cost, and holding-period return as (total received cash minus total acquisition outlay) divided by total acquisition outlay. A bond qualifies only if its exact holding-period return is at least the exact ratio <N> and its modified duration is at most <N>. Return the qualifying bond with the higher exact return, choose Bond A on an exact tie, or return Neither when neither qualifies.",
+   "type": "enum"
+  },
+  "H008": {
+   "sha256": "809ead3be71b91e09d07f51a85b0383e6fe5c22bf88bf27280e26dc12d6d3ff6",
+   "shape": "An asset has original cost <N> in USD millions. Under straight-line depreciation, <N> of its depreciable life has elapsed. Determine the residual value that would produce a target carrying amount of <N> at that point. Report the result in USD millions, rounded to two decimal places using half-up rounding.",
+   "type": "decimal"
+  },
+  "H009": {
+   "sha256": "22618547c13609628c05ef2792d94897d092ca35ca65771a40abbbdab124fba9",
+   "shape": "A transfer of <N> USD may use Network A or Network B. Compute both candidate route receipts before applying the routing rule. Network A deducts fee ratio <N> and then fixed fee <N> USD. Network B deducts fee ratio <N>, then fixed fee <N> USD, and finally increases the post-fee amount by bonus ratio <N>. Using unrounded intermediate amounts, use Network A if its net receipt is at least <N> USD, including exact equality; otherwise use Network B. What net receipt is selected? Carry all arithmetic exactly and round only the selected receipt half up to two decimal places in USD.",
+   "type": "decimal"
+  },
+  "H010": {
+   "sha256": "0ba45003f42106ca6d74ea05bbb7bb5e2fa81d3f0134e3196b39a0a284b3ae3f",
+   "shape": "Two post-merger initiatives are evaluated over the same first-year horizon without assuming independence. The cost-synergy initiative has marginal success probability <N> and contributes <N> USD millions whenever it succeeds. The revenue-synergy initiative has marginal success probability <N> and contributes <N> USD millions whenever it succeeds. In this scenario, the cost-synergy probability is strictly higher than the revenue-synergy probability and their sum exceeds one. If both initiatives succeed, incremental benefit <N> USD millions is earned beyond the standalone benefits. Unconditional integration cost is <N> USD millions, and required expected net benefit is <N> USD millions. Do not assume a dependence structure. Solve for the joint success probability needed to meet the target. The Fréchet lower bound is the revenue-synergy probability minus the cost-synergy failure probability, the upper bound is the revenue-synergy probability, and the band width is the cost-synergy failure probability. Report the percentage of this feasible band consumed above its lower bound by the required joint success probability. Zero percent is the lower bound, one hundred percent is the upper bound, and a result above one hundred percent is infeasible under the stated marginals.",
+   "type": "decimal"
+  },
+  "H011": {
+   "sha256": "f959ed8669b38c5aa4f1520a2ad21fcbe75ead0865e3821a261663493cea0c75",
+   "shape": "Under the fictional scenario assumptions stated here, an investor has <N> direct long shares, <N> shares attributed through related holdings, and derivative notional equivalent to <N> shares with exposure delta <N>. The investor also has <N> shares of offsetting short exposure. The issuer has <N> shares outstanding. Multiply derivative reference shares by delta, add all long exposure, subtract the short hedge, divide the signed result by shares outstanding, and convert the ratio to a percentage. Report the derivative-equivalent shares independently using half-up rounding to two decimal places, and report the net economic exposure percentage using independent half-up rounding to two decimal places.",
+   "type": "decimal"
+  },
+  "H012": {
+   "sha256": "b65f2beb280fedfc0936662be64c5eae30ad3386a00bea18c001629a57a6a3a1",
+   "shape": "A wallet makes a current transfer of <N> USD after prior transfers of <N> USD and <N> USD. Its rolling-window whale threshold is <N> USD. For a concentrated single-transfer check, this threshold is reduced by haircut ratio <N>, so the single-transfer threshold is the rolling threshold times (<N>-single-threshold haircut ratio). The wallet's total activity over the monitoring horizon, including all three transfers, is <N> USD. Compute current-transfer concentration as current transfer divided by total activity. If it is at least <N>, including exact equality, report the current transfer's excess over the haircut-adjusted single-transfer threshold; otherwise report the three-transfer total's excess over the unadjusted rolling threshold. Use exact arithmetic for threshold adjustment, concentration, and branch selection, and round only the final USD excess half up to two decimal places.",
+   "type": "decimal"
+  },
+  "H013": {
+   "sha256": "9b069288877f2a55f9037445b4f0500b0690164f3d5a2a349b782d43eb894501",
+   "shape": "Measure all wealth per <N> USD of original initial notional. A managed portfolio starts with equity weight <N> and the complementary bond weight. During period <N>, equity and bonds grow by factors <N> and <N>. At the midpoint, the advisor deducts a fixed advisory charge equal to <N> of original initial notional entirely from the bond side. The portfolio is then below its equity target. The advisor buys equity and pays transaction fee rate <N> on the purchase, also from the bond side. Solve the purchase so equity equals its target fraction of wealth after both midpoint charges. During period <N>, equity and bonds grow by factors <N> and <N>. Compare managed terminal wealth with a fee-free unmanaged buy-and-hold benchmark that retains the original equity and bond positions through both periods, performs no midpoint rebalance, and pays neither midpoint charge. Report managed wealth minus benchmark wealth as a percentage of original initial notional. A positive result favors the managed path. Growth factors are wealth multipliers, not return rates. Use exact arithmetic and round the final percentage half up to two decimals.",
+   "type": "decimal"
+  },
+  "H014": {
+   "sha256": "e2a021767056e3befd9afe1ce247af102f67d1d003dc2aff7900b8e9712a5c0c",
+   "shape": "Under this scenario-defined mean-variance score, Asset A has portfolio weight <N> and Asset B receives the complementary weight. Their return volatilities are <N> and <N>. A risk engine supplies base weighted covariance cross-term contribution <N> and stress contribution <N>; each already equals twice the product of both portfolio weights and the regime covariance. Use the stress contribution when <N> is at least <N>, and otherwise use the base contribution. Portfolio variance is the sum of the two squared weight-scaled volatilities and the selected contribution. The score equals portfolio excess return minus <N> times variance. What total portfolio return makes this score equal <N> when the risk-free rate is <N>? Report a percentage.",
+   "type": "decimal"
+  },
+  "H015": {
+   "sha256": "52c9bfe786230045209c270045a2eb9114f352721a7e5a777948cc16f536cc12",
+   "shape": "A company forecasts net income of <N> and must first retain <N>, with all monetary amounts in USD millions. Under this fictional internal policy, dividend authorization starts at <N>% of distributable earnings and passes through exactly three sequential payout-ratchet stages. Each stage reduces the remaining authorized share by the same fraction t=<N>, so the policy limit is distributable earnings times (<N>-t)^<N>. The liquidity plan separately caps the cash dividend at <N>. Determine the exact maximum total cash dividend satisfying both limits, then report it rounded half up to two decimals in USD millions.",
+   "type": "decimal"
+  },
+  "H016": {
+   "sha256": "579bb4dc3e7756a46f3649bfc5f6679a76e0708d370dedec85c97cba210308bb",
+   "shape": "An account receives <N> USD at the start of two equal phases, each lasting <N> whole annual compounding periods. The first-phase annual rate ratio is <N>, the strictly higher second-phase rate ratio is <N>, and <N> USD is added at the phase boundary. For a smoothed counterfactual, use the arithmetic mean of the two annual growth factors in both phases while preserving both contribution dates. Define initial-contribution drag as its smoothed terminal value minus its actual terminal value, and boundary-contribution uplift as its actual terminal value minus its smoothed terminal value. Divide each difference by the nominal, undiscounted sum of contributed cash, multiply the resulting decimal ratios once, and convert the product to percent. This is a bespoke scenario-defined product index, not a standard return, ROI, probability, causal-interaction measure, or recommendation. Use exact arithmetic and report two decimals with half-up rounding.",
+   "type": "decimal"
+  },
+  "H017": {
+   "sha256": "f031380c4ffa66e1b3af64726fbd3ef0b22972a997511179b5ec9f4d665c49a7",
+   "shape": "A portfolio worth <N> has available capital <N> and must retain at least <N>. In the joint scenario, market shock ratio <N> with sensitivity <N> and credit shock ratio <N> with sensitivity <N> contribute linear loss rates, while their product times <N> contributes an interaction rate. In the alternative scenario, shock ratio <N> is squared and multiplied by <N>. Convert each scenario rate to a dollar loss, use the larger loss, subtract it from available capital, and return capital_pass when the remaining capital meets the minimum or capital_fail otherwise.",
+   "type": "enum"
+  },
+  "H018": {
+   "sha256": "85b55b9e0c4f9956a08636291810ad6489178114384d587670a1bc7391b00fe6",
+   "shape": "A company has current common EPS <N> and requires pro forma EPS of at least <N>. Under this scenario, each financing option completes exactly three sequential common-share issuance stages. Option A adds total earnings of <N> per current share, and its per-stage share-base increase is <N>; the same increase applies at each stage, so its cumulative share multiple is (<N> + the ratio)^<N>. Option B analogously adds <N> per current share and uses per-stage increase <N> for cumulative multiple (<N> + the ratio)^<N>. An option qualifies only if its exact pro forma EPS meets the floor. Return exactly `option_a`, `option_b`, or `neither_option`: select the qualifying option with the higher exact EPS, use `option_a` on an exact tie, and use `neither_option` if neither qualifies. This is a fictional three-stage financing scenario, not a general accounting rule.",
+   "type": "enum"
+  },
+  "H019": {
+   "sha256": "86d9484086547920f0e9a7fdc32c9966cf77adea5dd027d9fd458d9e9bc3ae0b",
+   "shape": "Apply the fictional scenario-local planning rule stated here, not current law or regulatory guidance. A bank begins with eligible capital <N>, Tier <N> capital <N>, risk-weighted assets <N>, total exposure <N>, high-quality liquid assets <N>, and total net cash outflows <N>, all in USD millions. The scenario supplies minimum capital ratio <N>, capital buffer ratio <N>, minimum leverage ratio <N>, and minimum liquidity ratio <N> as decimal ratios. One dimensionless common stress activity x decreases eligible capital by <N>*x and Tier <N> capital by <N>*x, while increasing risk-weighted assets by <N>*x, exposure by <N>*x, reducing HQLA by <N>*x, and increasing net cash outflows by <N>*x. Each stress coefficient is the USD-million adverse change caused by one unit of x. Add the minimum capital ratio and buffer ratio to obtain k. Solve exactly for the positive x at which each constraint first binds: (starting_eligible_capital-k*risk_weighted_assets)/(eligible_capital_loss_per_stress_unit+k*risk_weighted_assets_increase_per_stress_unit), (tier_one_capital-minimum_leverage_ratio*total_exposure)/(tier_one_capital_loss_per_stress_unit+minimum_leverage_ratio*total_exposure_increase_per_stress_unit), and (high_quality_liquid_assets-minimum_liquidity_ratio*total_net_cash_outflows)/(hqla_loss_per_stress_unit+minimum_liquidity_ratio*net_cash_outflows_increase_per_stress_unit). Return the smallest of the three capacities as the maximum common stress activity allowed by all constraints, in stress multiples using half-up rounding to two decimals. Independently report k using half-up rounding to six decimals; use its exact unrounded value downstream.",
+   "type": "decimal"
+  },
+  "H020": {
+   "sha256": "90d8d47f74307f60b8c42ff235fa38a0252b9e4f964a45447b3b8611f0de373f",
+   "shape": "Apply the fictional enforcement scenario stated here, not current law or regulatory guidance. The maximum total remedy is <N> USD, of which <N> USD is fixed interest. A gain-based penalty equals realized gain <N> USD multiplied by <N>, while the alternative statutory floor is <N> USD. The pre-credit penalty base is the greater of those two amounts. A cooperation credit ratio c reduces that base to (<N> - c) times the pre-credit amount. What cooperation credit percentage makes the credited penalty plus fixed interest equal the maximum total remedy? Report the cap amount available for penalty independently in USD using half-up rounding to two decimal places, and report the cooperation credit percentage using independent half-up rounding to two decimal places.",
+   "type": "decimal"
+  },
+  "H021": {
+   "sha256": "099b78b7102a1b9bf4f907d9cb550f0399c0eb07c72f1b05000f4c49b618ebb3",
+   "shape": "Estimate a target company's levered equity beta from two equally weighted comparable companies using the zero-debt-beta Hamada convention. Comparable A has levered beta <N>, debt market value <N> USD, common-equity market value <N> USD, and marginal corporate tax rate <N>. Comparable B has corresponding values <N>, <N> USD, <N> USD, and <N>. The target has debt market value <N> USD, common-equity market value <N> USD, and tax rate <N>. For each comparable, divide observed levered beta by [equity plus (one minus tax rate) times debt] divided by equity. Take the unweighted arithmetic mean of the two unlevered betas, then multiply by the target company's factor of the same form. Assume debt beta is zero, interest tax shields are fully usable and stable, all debt and equity values are contemporaneous market values, and the comparable betas use the same market benchmark and estimation period. Ignore preferred stock, hybrids, cash, non-operating assets, and other beta adjustments. Report the target levered beta using exact arithmetic, independently round the two checkpoints and final to four decimals with half-up rounding, and never feed displayed checkpoints into the gold calculation.",
+   "type": "decimal"
+  },
+  "H022": {
+   "sha256": "84999b86824e2d3834115acca480d2791b07b5944337362dfdaedc99cbe17e63",
+   "shape": "At the stated post-earnout measurement date, the acquirer's predeal common shares have aggregate reference equity value <N> at one fixed contractual share price. Upfront base consideration is <N>, excluding the earnout; <N> of that base is paid in cash and the remainder in acquirer common shares. The target sellers retain all upfront shares through the measurement date. A fully realized earnout with settlement value <N>, incremental to the base consideration, is also settled entirely in common shares at the same unchanged price. Assume no other issuance, repurchase, disposal, option exercise, conversion, or price adjustment. Determine the target sellers' post-settlement percentage ownership of the common-share base.",
+   "type": "decimal"
+  },
+  "H023": {
+   "sha256": "366910d22302c233c3fe10d2071d04acfc6308dff5a0f5901a46d6221b5b3682",
+   "shape": "Compare two capital plans for a company with current debt <N> and current equity <N>. Under this scenario's internal three-stage leverage-covenant ratchet, the permitted debt-to-equity ceiling starts at <N>. At each stage the company reduces the remaining ceiling by the same fraction t=<N>, so the final shared ceiling is (<N>-t)^<N>. This is a scenario-specific financing policy, not a general regulatory rule. Plan A adds borrowing <N> and equity <N>. Plan B repays debt <N> and adds equity <N>. A plan qualifies only when its exact post-transaction ratio does not exceed the final ceiling. Return exactly `plan_a`, `plan_b`, or `neither_plan`: select the qualifying plan with the lower exact ratio, use `plan_a` on an exact tie, and use `neither_plan` if neither qualifies.",
+   "type": "enum"
+  },
+  "H024": {
+   "sha256": "f1e79eed530c110afe1d1af7922cbba72e7d6cbae8141d3f31da3d4b6c95a4d2",
+   "shape": "Before preferred distributions and a planned common-share issuance, earnings normalized per current common share are <N>. The issuance increases the common-share base by ratio <N>. To keep exact pro forma post-issuance EPS at or above <N>, determine the maximum preferred-dividend allocation per current common share. Report the result in USD per current common share, rounded half up to two decimal places.",
+   "type": "decimal"
+  },
+  "H025": {
+   "sha256": "6c31878dbc5595147762e276f192ff75f827cb5d0facbc7b5438ebec874ec96b",
+   "shape": "A project costs <N> USD now, produces an interim cash flow of <N> USD after <N> whole years, and pays cleanup cost <N> USD together with salvage after <N> whole years. The same gross salvage and cleanup apply in both scenarios. The stress scenario has probability <N> and effective annual discount rate <N>; the normal scenario has probability one minus that probability and effective annual discount rate <N>. Compound each rate over the applicable whole-year horizon. Conditional scenario NPVs do not include scenario probabilities. Expected NPV is the probability-weighted decision-analysis expectation of those conditional NPVs, not a market value. What minimum gross terminal salvage makes expected NPV at least <N> USD and stressed-scenario NPV at least <N> USD?",
+   "type": "decimal"
+  },
+  "H026": {
+   "sha256": "df4874ba08b479ca313f7d54399b259494a7b36d3d66033c17377b43b7986738",
+   "shape": "The tweet and news average polarities use a scenario-defined scale from <N> to <N>. The raw tweet signal is <N> times signed average polarity <N>. Under this scenario, it passes through exactly three sequential moderation stages with no replenishment between stages. At each stage, the same ratio u=<N> of the surviving signed signal is removed, so each stage retains <N>-u and the final retention factor is (<N>-u)^<N>. The news contribution is <N> times signed average polarity <N> times influence factor <N>. Add the retained tweet contribution, the news contribution, and the separate signed dimensionless market signal <N>. Classify the exact aggregate as Bullish when it is at least <N>, Bearish when it is at most the negative of <N>, and Neutral otherwise.",
+   "type": "enum"
+  },
+  "H027": {
+   "sha256": "b0a1ae602985b034e957c6739c4955b3e12077647b18e8b2062741f3404acc25",
+   "shape": "Compare a target-payout policy and a three-period stable-growth policy. All monetary amounts are in USD millions. At the common end of the three-period planning horizon, forecast net income is <N> and the mandatory reserve is <N>, so distributable earnings equal forecast net income minus the reserve. The target-payout policy proposes a terminal total dividend equal to distributable earnings times <N> and requires retained distributable earnings of at least <N>. The stable-growth policy starts from prior total cash dividend <N> at the beginning of the horizon and compounds it for exactly three periods at the per-period rate <N>, so its terminal total dividend equals the prior total cash dividend times (<N> + the growth rate)^<N>; it requires retained distributable earnings of at least <N>. At that horizon a policy qualifies only if its proposed dividend does not exceed <N> and its policy-specific retained-earnings floor is met. If both qualify, return `target_payout` when the target-payout dividend is at least the stable-growth dividend, including an exact tie; otherwise return `stable_growth`. If only one qualifies, return it; otherwise return `no_feasible_policy`.",
+   "type": "enum"
+  },
+  "H028": {
+   "sha256": "88cedc2a00dbcc56cb846a84aea80299919765f00f1428dd28893581f726a1bc",
+   "shape": "Evaluate a simplified full-year run-rate after a stylized acquisition. The acquirer's predeal common shares have aggregate reference equity value <N> at one fixed contractual share price. Upfront base consideration is <N>, excluding the earnout; <N> is paid in cash and the remainder in common shares. A fully realized earnout with settlement value <N>, incremental to the base consideration, is settled entirely in common shares at the same unchanged price, and every deal share is outstanding for the full year. The entire upfront cash leg is debt-funded at annual pre-tax interest rate <N>. Same-period standalone after-tax net income is <N> for the acquirer and <N> for the target; target net income excludes the separately stated recurring annual pre-tax synergies of <N>. With tax rate <N>, after-tax synergies and interest each equal their pre-tax amount times one minus that rate, and the full interest tax shield is usable. Ignore purchase-accounting amortization, transaction and integration costs, share weighting, price reaction, and all other share or earnings changes. Determine adjusted EPS accretion or dilution versus the acquirer's standalone EPS as a percentage; positive means accretion and negative means dilution.",
+   "type": "decimal"
+  },
+  "H029": {
+   "sha256": "54cc5623724934223cb612aeb4f4a7dfd74977c3eee40ac316d2213849bbf1b0",
+   "shape": "A wallet has two prior transfers of <N> USD and <N> USD in the current monitoring window. Its base rolling whale threshold is <N> USD and is increased by risk-adjustment ratio <N>. What next transfer amount would make the rolling total exceed the adjusted threshold by exactly <N> USD? Use exact arithmetic and report the required transfer in USD using half-up rounding to two decimal places.",
+   "type": "decimal"
+  },
+  "H030": {
+   "sha256": "cbe350597aca341b6757e4df85fcd881c2ab34863988cc83531592f2f4180a19",
+   "shape": "Apply the fictional scenario-local remediation policy stated here, not current law or regulatory guidance. Begin with base assessment <N> USD. A reporting delay of <N> days incurs <N> USD per day. Treat <N> as the fractional credit applied to the combined assessment and delay charge, so the retained fraction is one minus that rate. Then add mandatory monitoring cost <N> USD outside the credit base. Report the retained-fraction checkpoint independently to six decimal places and the total remediation budget in USD using half-up rounding to two decimal places.",
+   "type": "decimal"
+  },
+  "H031": {
+   "sha256": "e3fce05f733e4d059c1d1525abbc4c3f70fa2af0228b26d9d86856c9051bc58b",
+   "shape": "A firm has capital <N>, base risk-appetite ratio <N>, a downturn haircut <N>, and a volatility uplift <N>. Its liquid assets are <N>, of which <N> must remain uncommitted, and it proposes exposure <N>. Reduce the base appetite by the downturn haircut, divide it by one plus the volatility uplift, and apply the result to capital. Define available excess liquidity as max(liquid assets, the reserve) minus the reserve, which floors this numeric limit at zero without treating a reserve shortfall as covered. The binding exposure limit is the smaller of that stressed risk budget and available excess liquidity. Return liquidity_block if the original liquid assets do not cover the reserve, otherwise return within_appetite when proposed exposure is within the binding limit and reduce_exposure when it is not.",
+   "type": "enum"
+  },
+  "H032": {
+   "sha256": "a2b50e70f46070acac5b30c38b6a854a9f0d154f4734f1ee72c74fca14f21d08",
+   "shape": "Under this scenario's annual fee contract, a portfolio has gross expected return <N>, volatility <N>, and beta <N>. The market return is <N> and the risk-free rate is <N>. A management fee rate reduces expected return one-for-one, so net return equals gross return minus the fee; it does not change volatility, beta, the market return, or the risk-free rate. The net portfolio must retain a Sharpe ratio of at least <N> and Jensen's alpha of at least <N>. Compute the exact maximum annual management-fee rate that satisfies both constraints. Test both constraints using the unrounded exact rate, then report that rate as a percentage rounded half up to two decimal places; the displayed percentage is a reporting approximation of the exact maximum.",
+   "type": "decimal"
+  },
+  "H033": {
+   "sha256": "e3d5615157a4dd5c8cd65e7cf3fbb59f665beb2864c408b67f23418401a08a02",
+   "shape": "A token has <N> units and a current price of <N> USD. In each of exactly three sequential stress stages, the same ratio <N> is removed from the price surviving the previous stage, with no replenishment between stages; the three-stage stressed price is therefore current price times (<N>-per-stage downside ratio)^<N>. Under the burn policy, <N> units are removed and treasury support raises that stressed price once by ratio <N>. Under the fallback emission policy, <N> units are added and the stressed price receives no support. Ignore any other price effects. Use the burn policy if its resulting market cap is at least <N> USD; otherwise use the emission policy. What market cap is selected? Use exact values for the floor test and all intermediate arithmetic, then report the selected market cap in USD using half-up rounding to two decimal places.",
+   "type": "decimal"
+  },
+  "H034": {
+   "sha256": "0620ee87496ad224f1b38247a255c775192d8bb0581da3e7e344afe1ca58118d",
+   "shape": "A financial institution can spend at most <N> on all remediation. Capital remediation already requires <N>, liquidity remediation requires <N>, and any exposure above <N> incurs a charge at ratio <N> of the excess. Assuming the remediation budget exceeds the two fixed remediation costs, compute the maximum total exposure that keeps aggregate remediation spending within budget.",
+   "type": "decimal"
+  },
+  "H035": {
+   "sha256": "6bcad92f87ca3b20c75e2f2f68d2a95a78f8f22f125c6de3543fa4552aef9839",
+   "shape": "A crypto asset starts at <N> USD per token and loses fraction <N> of its price in a global shock. The severe policy applies when that loss ratio is at least <N>; otherwise the mild policy applies. After the shock, the severe policy increases the post-shock price by support ratio <N> and then deducts <N> USD per token. The mild policy increases it by support ratio <N> and then deducts <N> USD per token. Report the resulting net price using exact arithmetic and two-decimal half-up rounding only at the end.",
+   "type": "decimal"
+  },
+  "H036": {
+   "sha256": "c5df465ef8a40462406ce483c723e107ce206199c82fed0e484634ab4117ad9f",
+   "shape": "Three annual merger-synergy workstreams are measured on the same pre-tax operating-contribution basis. Their unadjusted headline values are procurement savings <N>, IT savings <N>, and revenue-synergy contribution <N>, all in USD millions. Due diligence identifies procurement-IT overlap <N>, procurement-revenue overlap <N>, and IT-revenue overlap <N>. Each pairwise overlap includes the same common three-way overlap <N>. Apply inclusion-exclusion to deduplicate the headline opportunities, then realize ratio <N> of that deduplicated amount. Deduct fully tax-deductible annual integration charge <N> from the positive realized amount before applying tax rate <N>. What percentage of the unadjusted headline sum remains as annual after-tax net captured synergy? Use the sum of the three headline values as the denominator intentionally.",
+   "type": "decimal"
+  },
+  "H037": {
+   "sha256": "e5241da961f27ca001e051068a62ba0ca7b28da525c015123d7435e484c02b79",
+   "shape": "A bond has quoted clean price <N> and will pay redemption cash <N> over the planned holding period. The investor also pays settlement cost <N>, defined as all acquisition cash beyond the clean quote, including accrued interest and fees where applicable; do not add those amounts again. Define total acquisition outlay as clean price plus settlement cost and holding-period return as (aggregate coupon cash plus redemption cash minus total acquisition outlay) divided by total acquisition outlay. Determine the minimum aggregate coupon cash that exactly meets target return ratio <N>, and report it in USD rounded half up to two decimal places.",
+   "type": "decimal"
+  },
+  "H038": {
+   "sha256": "d6e36dfe4ed7f0fe8715db6ca2ff55b0f30dc1c2ca92f61f7ada68e023c22a36",
+   "shape": "An investor realizes a fully usable eligible loss magnitude of <N> USD. The applicable current-year tax rate is <N>, so the immediate tax reduction is available at time <N>. The tax-harvest path invests the original <N> USD principal plus that tax reduction in a permitted replacement exposure. The replacement earns an annual effective total-return rate equal to the intended rate <N> minus the additive annual tracking shortfall <N>. In the no-harvest counterfactual, the same original principal remains in the intended exposure and no tax reduction is received. Both paths compound annually for <N> years with dividends reinvested and no intermediate cash flow. Assume the replacement does not trigger wash-sale disallowance; ignore transaction fees, advisory fees, offset limits, and future basis-tax consequences. Compute the signed terminal wealth advantage of the tax-harvest path over the no-harvest path in USD. A positive result means the invested tax reduction exceeds the cumulative tracking shortfall. Use exact arithmetic and round the final amount half up to two decimals.",
+   "type": "decimal"
+  },
+  "H039": {
+   "sha256": "61690868413ba509e5436403ade4e34eeb29e37dc6e020a579b24410f9796282",
+   "shape": "A company has current debt of <N> and current equity of <N>. It plans additional borrowing of <N> and a debt repayment of <N>. Determine the exact minimum new equity injection required after both debt actions so that the debt-to-equity ratio equals the permitted ceiling <N>. Use full precision for the ratio equation, then report the injection rounded to two decimals in USD millions.",
+   "type": "decimal"
+  },
+  "H040": {
+   "sha256": "16a4c0e24f4528c08546100fff0c2115f250cb6e9d86a80e4a0e4c623afb9d84",
+   "shape": "A token has <N> units outstanding and will burn <N> units. After the burn, the token is expected to trade at <N> USD per unit, and this price is assumed to remain unchanged when additional units are emitted. If total market capitalization must not exceed <N> USD, first compute the market cap of the current supply at that expected price, express it as a multiple of the ceiling, and use that multiple to recover the ceiling-compatible total supply. What is the maximum number of additional token units that may be emitted after the burn? Carry all arithmetic exactly, then report the result using half-up rounding to the nearest whole token.",
+   "type": "decimal"
+  },
+  "H041": {
+   "sha256": "a954a1f37a4299a9d967a08bda6a37f024a5749559334755f7a19d5625c899d7",
+   "shape": "A borrower starts with an outstanding principal of <N>. Two equal-length periods use the same effective rate of <N>, with interest applied before each end-of-period payment. The borrower pays <N> at the end of the first period. What exact second-period payment, made at the end of the second period, leaves a balance of <N> immediately after that payment? Define the target equality using the unrounded exact payment, then report the payment in USD rounded half up to two decimal places; the displayed amount is a reporting approximation.",
+   "type": "decimal"
+  },
+  "H042": {
+   "sha256": "159e4df81603258216222a1e209a30b265e189c3c9447b40d374a1f6d03ef4a4",
+   "shape": "A merchant has <N> original payment attempts, each for <N>. The primary processor succeeds with probability <N>. Every primary failure triggers exactly one backup retry, whose conditional success probability is <N>. An order produces one settlement of the stated amount if either attempt succeeds and produces no revenue if both fail; no order is retried more than once. The primary charges <N> of the stated amount plus fixed fee <N> on every original attempt, whether successful or failed. The backup charges <N> of the stated amount plus fixed fee <N> on every retry, whether successful or failed. The merchant also incurs <N> for every primary failure and an additional <N> for every order where both attempts fail, and pays <N> once for the batch. Treat all probabilities as exact scenario expectations. Ignore chargebacks, lost-sales costs, taxes, and all other costs. Compute expected settled revenue and deduct all processing, handling, and subscription costs. What are the expected net merchant proceeds?",
+   "type": "decimal"
+  },
+  "H043": {
+   "sha256": "30d44f906a072d28ccc2aaa0d34ea53edcb9731262cb767a12fd1ba0038630ba",
+   "shape": "A company has equity value <N>, debt value <N>, cost of equity percentage <N>, and corporate tax rate ratio <N>. The WACC ceiling <N> is also a percentage. Determine the maximum pre-tax cost of debt that keeps its WACC at that ceiling. Report the cost of debt as a percentage rounded half-up to two decimal places.",
+   "type": "decimal"
+  },
+  "H044": {
+   "sha256": "760f1fd7e4f08f2cded946dff51221ab523cb685733c283eae7efef756270ce9",
+   "shape": "Two project plans have identical non-cleanup cash flows, so those cash flows cancel in their NPV difference. The valuation-date base cleanup estimate is <N>. It grows at the nominal effective annual escalation rate <N>, so the early plan pays the resulting cleanup cost at the end of year <N>. The deferred plan pays the resulting cleanup cost at the end of year <N>, together with a separate fixed nominal administration outflow of <N> paid only at that terminal date. Discount all cleanup-related cash flows at the nominal effective annual rate <N>, compounded annually. The escalation and discount rates use the same currency and inflation basis and are decimal ratios. Compute NPV(deferred plan) minus NPV(early plan). A positive result favors deferral, a negative result favors early cleanup, and zero means equal NPV. Report signed USD to two decimal places.",
+   "type": "decimal"
+  },
+  "H045": {
+   "sha256": "46f93a80a49ba3ea6ee9bbf431cbd88eed8a5ab7f7b2afc5d3ee6dad072e3680",
+   "shape": "Compare ESG program A, with cost <N>, financial benefit <N>, verified emissions reduction <N>, and attribution-overlap ratio <N>, against program B with cost <N>, financial benefit <N>, verified emissions reduction <N>, and attribution-overlap ratio <N>. For each program, effective reduction equals verified reduction multiplied by one minus the overlap ratio, and net cost per effective ton equals (cost minus financial benefit) divided by effective reduction. A program is feasible only when its cost does not exceed <N> and its effective reduction reaches <N>. Among feasible programs, select the one with lower net cost per effective ton, preferring program_a on a tie. Select the sole feasible program, or return no_feasible_program when neither qualifies.",
+   "type": "enum"
+  },
+  "H046": {
+   "sha256": "8f43940541ca5165df4c24ed2f56c5e5d31211849dcd9466b2404d06fdc01f1c",
+   "shape": "A saver enters a three-year retirement bridge with <N>. The remaining balance earns <N> annually. Withdrawals occur at each year-end: W after year <N>, W times one plus <N> after year <N>, and W times the square of that growth factor after year <N>. Immediately after the third withdrawal, <N> must remain. Compute the exact first-year withdrawal W that leaves the required reserve. Define the reserve equality using the unrounded exact withdrawal, then report W in USD rounded half up to two decimal places; the displayed amount is a reporting approximation.",
+   "type": "decimal"
+  },
+  "H047": {
+   "sha256": "a743117ef87fa7a2ef31ce3abe906b5d883e2201b72a02db18312105a25a3c24",
+   "shape": "Under the simplified scenario rules, gross income is <N> and the tax rate is <N>. The standard method permits a deduction of <N> and a credit of <N>. The itemized method permits a deduction of <N> and a credit of <N>, but it may be used only when <B> is <B>. Compute both nonnegative net liabilities and use the itemized method only when eligible and strictly lower; otherwise use the standard method. What tax liability is payable?",
+   "type": "decimal"
+  },
+  "H048": {
+   "sha256": "79debddef2212ffeda88584eff98f6432cf325c50664617628c8f3746ada6794",
+   "shape": "A company starts with revenue <N> and then experiences a downturn ratio <N>. It must reach target revenue <N> after recovery. Assuming the target exceeds the post-downturn revenue, compute the required recovery rate as the additional revenue needed divided by post-downturn revenue, and report that rate as a percentage.",
+   "type": "decimal"
+  },
+  "H049": {
+   "sha256": "7749c9c7604ff9141178b09552d52c5b8d7a658672c6d5033f7c5fd24944939e",
+   "shape": "A completed independent assurance engagement checks reported energy savings <N> against audited energy savings <N> and reported waste-management savings <N> against audited waste-management savings <N>. Under this scenario, the per-layer tolerance ratio <N> applies at exactly three sequential multiplicative audit-adjustment layers. Starting from each reported amount, every layer multiplies the current lower bound by <N>-t and the current upper bound by <N>+t, so the audited amount is compared once against the final inclusive envelope reported*(<N>-t)^<N> through reported*(<N>+t)^<N>. Audit coverage <N> must reach <N>, and <B> indicates that the completed engagement covered both metrics and issued an unmodified conclusion. Return assured only when every condition holds; otherwise return review_required.",
+   "type": "enum"
+  },
+  "H050": {
+   "sha256": "63b3152fbd26aa1a2e56cb3135fc180691748bb3782d847fbd560b1f1742e096",
+   "shape": "A customer expects monthly transfer volume <N> and <N> transfers per month for <N> months. Plan A charges proportional transfer rate <N>, fee <N> per transfer, monthly subscription <N>, and one-time setup fee <N>. Plan B charges <N>, <N>, <N>, and one-time setup fee <N>. Each setup fee is charged exactly once at account opening, not once per month or transfer. Using full precision, compute Plan A savings relative to Plan B, defined as Plan B total cost minus Plan A total cost. Report the signed savings amount in USD, rounded half up to two decimals.",
+   "type": "decimal"
+  },
+  "H051": {
+   "sha256": "4940775fa0a711ea457fa021eb2aee114872db5df4560b4490a044f0792048c9",
+   "shape": "Compare one-unit cash-settled vanilla call and put contracts on the same underlying and expiration. All USD amounts are per share. The exhaustive subjective scenarios have bullish terminal price <N> and lower bearish terminal price <N>, with bullish probability <N>. Each generated strike lies strictly between the two prices. Thus the call with strike <N> pays its bull-state intrinsic value and zero in the bear state, while the put with strike <N> pays zero in the bull state and its bear-state intrinsic value. Subtract call premium <N> and put premium <N> once from their respective probability-weighted payoffs. Use undiscounted simple terminal profit and ignore financing, discounting, dividends, and transaction costs. A strategy qualifies only if exact expected profit is at least <N> and exact worst-state profit is at least <N>. Return the qualifying strategy with higher exact expected profit, choose Call on an exact tie, or return Neither when neither qualifies.",
+   "type": "enum"
+  },
+  "H052": {
+   "sha256": "162a11049495682623a56951e62dfdf4f99e9654cf6bf3e0cc3351d95998122f",
+   "shape": "A sustainability report gives annual energy expenditure <N> and an achieved energy-reduction ratio <N>. Annual waste-management expenditure is <N>. To reach the combined annual savings target <N>, compute the waste-cost reduction rate that must be reported, expressed as a percentage.",
+   "type": "decimal"
+  },
+  "H053": {
+   "sha256": "7241625bf8d512a2424182cf12cff2f9cf0026a9ee839eb7bfc2b645dd21cd1e",
+   "shape": "Under a fictional internal compliance-planning scenario, not a statement of current law, an actual penalty calculation, an accounting provision, or a market-concentration test, a crypto firm models exactly three nonoverlapping activity categories that exhaust the measured scenario-exposure pool for one reporting period and currency basis. Category <N> has covered volume <N> USD and decimal assessment ratio <N>; Category <N> has <N> USD and <N>; Category <N> has <N> USD and <N>. For each category define modeled exposure P_i as volume times assessment ratio, define s_i as P_i divided by the total of the three exposures, and define H as the sum of the three squared shares. Report <N>H as a percentage. With three positive categories, this percentage-scaled HHI-style score is at least <N> <N> percent and approaches but does not reach <N> percent. It measures only concentration within the stated modeled exposure pool; it is not a <N>-to<N> HHI, a violation probability, or a legal risk score. Use exact arithmetic and round only the final percentage to two decimals with half-up rounding.",
+   "type": "decimal"
+  },
+  "H054": {
+   "sha256": "2e3614518b6df657e940e82d00bd03e6fdd6f4d5363ee78a2014a0582de93fd7",
+   "shape": "An analyst evaluates one inventory sale under two mutually exclusive net-recovery states. Quick assets before the sale, excluding inventory, are <N> USD, and inventory carrying amount <N> USD is sold. In every state, fraction <N> of net proceeds remains as cash in quick assets and the complementary fraction immediately repays current liabilities at par. The low recovery rate is <N> and the high rate is that low rate plus positive spread <N>; generated cases keep their sum below one. The high state occurs with probability <N>. Rather than giving pre-sale liabilities directly, the scenario gives <N> USD, the liabilities remaining after high-state repayment; the same implied pre-sale liabilities apply in both states. Compute each state's post-sale quick ratio. Then subtract the quick ratio formed from probability-weighted post-sale quick assets and liabilities from the probability-weighted average of the two state quick ratios. This positive expectation-order gap is a scenario-defined quick-ratio convexity premium, not expected cash or a realized covenant ratio. Report its percentage-point equivalent, using exact arithmetic, independently rounded checkpoints, and two-decimal half-up rounding only for the final.",
+   "type": "decimal"
+  },
+  "H055": {
+   "sha256": "8f9274f7fb94ba00b3b5755b3918760f5fcc4d97aa89d823e236cca040d5bfa7",
+   "shape": "A portfolio worth <N> faces positive downside shock ratio <N>. Its linear loss sensitivity is <N>, and its convexity multiplier <N> applies to the square of the shock. Add the linear and convexity loss rates, convert the result to a gross dollar loss, and cap that loss at <N>. Compare the capped loss with budget <N>. Return within_budget when the capped loss does not exceed the budget and budget_breach otherwise.",
+   "type": "enum"
+  },
+  "H056": {
+   "sha256": "d32ee80f5c5a0031a0ac6eb04029f8e9e2c340e9040725f79331756f22de914b",
+   "shape": "A portfolio worth <N> has factor shock ratios <N> and <N>, with respective loss sensitivities <N> and <N>. Their joint effect is the product of both shocks and <N>. A concentration ratio <N> adds its squared value to the modeled loss rate. Compute the modeled loss from the sum of both linear factor rates, the joint rate, and the concentration square. The required capital charge is the larger of that modeled loss and external stress loss <N>.",
+   "type": "decimal"
+  },
+  "H057": {
+   "sha256": "9ca810a88860689f398bb46ddede9fd7293c92b4b3673cba28a73f5dec6c3213",
+   "shape": "A product's original unit price is <N> USD. Its supplied baseline gross margin ratio is <N>, calculated from that same undiscounted unit price and the same per-unit accounting basis. In a comparison scenario, the selling price is discounted by <N> of the original price and the post-change unit cost is <N> USD. What percentage of the original per-unit gross profit is retained after the price discount and unit-cost change? This is a unit gross-profit retention percentage, not the post-change gross-margin percentage; a result above <N> percent means the post-change unit gross profit exceeds the baseline. Use exact arithmetic without feeding the independently displayed checkpoint downstream, and round the final percentage to two decimal places with half-up rounding.",
+   "type": "decimal"
+  },
+  "H058": {
+   "sha256": "e08d9313c132e4eeebd59328a2fd16dbd3a5541336be87606092e3b2483858bd",
+   "shape": "Under a fictional internal monitoring scenario, not a statement of current law or actual control effectiveness, a primary review detects exact decimal ratio <N> of one fixed eligible transaction population during one reporting period. A backup review is applied only to transactions missed by the primary review and detects an unknown conditional ratio of that missed set, so detections from the two stages do not overlap. The target unique combined detection ratio is <N>, with the primary ratio strictly below the target. What minimum conditional detection ratio must the backup review achieve so unique combined detection reaches the target? Do not assume independent detectors or apply inclusion-exclusion. Report the required backup ratio as a percentage, using exact arithmetic and rounding only the final percentage to two decimal places with half-up rounding.",
+   "type": "decimal"
+  },
+  "H059": {
+   "sha256": "83c7db7a36ac37e608d476e192b74ed9894db87acb54ec93d82b654d5b10ee69",
+   "shape": "Apply the fictional scenario-local monitoring policy given here, not current law or regulatory guidance. Current-window activity consists of <N> and <N>, while comparable historical-window activity was <N>. Define the current-volume growth ratio as (daytime volume + overnight volume - historical-window volume) divided by historical-window volume; its strict trigger threshold is <N>. Transfers involving the scenario's elevated-risk corridor total <N>. The baseline corridor threshold is <N>. At each of exactly three sequential adjustment stages, reduce the surviving threshold by fraction <N> of its then-current value, with no replenishment between stages; the effective threshold is the baseline multiplied by one minus that fraction three successive times. The scenario also records a rapid-velocity flag of <B>, an incomplete-originator flag of <B>, and a mandatory-hold flag of <B>. The investigation trigger is <B> when both the growth threshold and effective corridor threshold are strictly exceeded, or when either metadata flag is present. Return Hold when the investigation trigger and mandatory-hold flag are both <B>; otherwise return Investigate when the investigation trigger is <B>; otherwise return Routine monitoring. Report the one-stage corridor-threshold retention factor independently using half-up rounding to six decimals, then return the exact policy action.",
+   "type": "enum"
+  },
+  "H060": {
+   "sha256": "45395994fa1ac03a99654cb31b26be07e1ca125491710472ed0ab5e244b530a1",
+   "shape": "Apply the following fictional scenario-local review policy, not current law or regulatory guidance. A customer's prior risk score is <N>, current risk score is <N>, material-migration threshold is <N>, and elevated-current-risk threshold is <N>. The current review also reports suspicious activity <B> and stale documentation <B>. Compute signed score migration as current risk score minus prior risk score. Use Enhanced review when that signed migration reaches the positive material-migration threshold or current risk reaches the elevated-current-risk threshold; otherwise use Routine monitoring. Stale documentation overrides that result with Suspend and refresh records, while suspicious activity has highest precedence and produces Restrict and investigate. Return exactly one of these four labels: Routine monitoring, Enhanced review, Suspend and refresh records, or Restrict and investigate.",
+   "type": "enum"
+  },
+  "H061": {
+   "sha256": "08e3a729321305c8d3eb43e8ff918f05cf8f0557817690cd961886f903bde69e",
+   "shape": "A company has a variable COGS rate ratio of <N>, fixed operating costs of <N>, interest expense of <N>, and an income tax rate ratio of <N>. Determine the revenue required to achieve after-tax income of <N>. Report the result in USD millions.",
+   "type": "decimal"
+  },
+  "H062": {
+   "sha256": "fc86bf707c24f5bc3c24123efd557568b794a0a4b0554e03f3a6c21c71eb29bd",
+   "shape": "Start with reporting-currency capital and convert it into base currency at normalized entry quote <N>, expressed as reporting-currency units per base-currency unit. The entry conversion retains one minus fee ratio <N>. At exit, convert all retained base currency back into the reporting currency at the normalized exit quote to be solved for and retain one minus fee ratio <N>. Then deduct a financing charge equal to <N> times the initial reporting-currency capital. Determine the exact exit-quote threshold at which the net return equals <N>. Carry all arithmetic exactly, then report that threshold using half-up rounding to six decimal places.",
+   "type": "decimal"
+  },
+  "H063": {
+   "sha256": "7fb4ddd8cb369eb1f3cff27193a17861aea5f82b40a436e90ab6fe26cac89e0c",
+   "shape": "A household starts with a total budget of <N>. A cut of <N> is imposed while protected spending of <N> and planned flexible spending of <N> are intended to continue. Flexible spending may not fall below <N>, and at most <N> of outside funding is available. Prefer reducing flexible spending if that alone covers the funding gap; otherwise use outside funding if it alone covers the gap. Which response should be selected under these rules?",
+   "type": "enum"
+  },
+  "H064": {
+   "sha256": "b64a7cddad8f197c8c5f3a7f4b8e88edbb5a12c673a0d6e25aaf1547e6a22910",
+   "shape": "An issuer compares green-bond structure A and structure B for the same principal <N>. Structure A has annual yield ratio <N>, term <N>, issuance cost <N>, and eligible-proceeds share <N>. Structure B has annual yield ratio <N>, term <N>, issuance cost <N>, and eligible-proceeds share <N>. For each structure, compound the principal over its term, subtract principal to obtain interest cost, and add issuance cost to obtain total financing cost. A structure is feasible only if total financing cost does not exceed <N> and its eligible share reaches <N>. Choose the lower-cost feasible structure, prefer structure_a on a cost tie, choose the sole feasible structure, or return no_feasible_structure when neither qualifies.",
+   "type": "enum"
+  },
+  "H065": {
+   "sha256": "7a3dc785d4b47e339f0c876ef7fd7590ee6454245cd773ae31befa213fd8a025",
+   "shape": "An investment account begins a measurement period at value <N>. Immediately before a contribution of <N> is added after <N> of the period has elapsed, the account value is <N>. At period end, the post-distribution account value is <N> and a terminal cash distribution of <N> is paid at that same time; the ending value excludes that distribution. There are no other external cash flows or valuation changes at the contribution instant. Compute the exact chain-linked time-weighted return from the pre-contribution and post-contribution subperiods. Independently compute the standard Modified Dietz return using the contribution's remaining-period weight. What is time-weighted return minus Modified Dietz return in signed percentage points?",
+   "type": "decimal"
+  },
+  "H066": {
+   "sha256": "093862b21a9d2e429d805810984eb81dd6f549f49a04ac15966da4e19fdec49b",
+   "shape": "An ESG project is expected to produce annual energy savings of <N> and annual water savings of <N>, while requiring annual maintenance cost of <N>. The full-horizon present-value multiplier for these recurring net benefits is <N>. Using ROI = (present value of net benefits minus initial investment) divided by initial investment, compute the maximum initial investment that exactly meets the required ROI ratio <N>.",
+   "type": "decimal"
+  },
+  "H067": {
+   "sha256": "952647644130b34db2b2a336f2ee43512d6b82c3b1301aa2ef2c3d8a2009e255",
+   "shape": "All USD amounts are per underlying share. A cash-settled call expires in the money at terminal stock price <N> with strike price <N>. Its intrinsic payoff is terminal price minus strike. Deduct the additional settlement fee <N>, which is separate from the strike already embedded in that payoff. Simple nonannualized expiration ROI equals (intrinsic payoff minus settlement fee minus premium) divided by premium. For target ratio <N>, where <N> means <N>%, compute the exact premium threshold at which ROI equals the target. Ignore financing and discounting. Carry the threshold exactly, then report it using half-up rounding to cents. The displayed amount is a rounded report of the exact threshold, not necessarily the greatest executable whole-cent premium.",
+   "type": "decimal"
+  },
+  "H068": {
+   "sha256": "48f4ef6839df2cc24e949dd14838547cbc92388772de8a9b5889f42685af9c26",
+   "shape": "A company compares otherwise identical annualized run-rate states before and after an asset disposal. After the action it retains a net total-asset base of <N>, while <N> is the <B> reduction from the pre-action total-asset base after accounting for any disposal proceeds retained or distributed. Comparable run-rate net sales fall by <N>. Relative to pre-action asset turnover, the asset-base reduction alone would create a gross mechanical turnover uplift, while the sales loss creates a turnover drag. What percentage of that gross mechanical uplift is offset by the sales-loss drag?",
+   "type": "decimal"
+  },
+  "H069": {
+   "sha256": "e782408c14e4583a52c2d2cf8ac9c113ccc1ca671e91883d5f4830346c3e7f10",
+   "shape": "A saver has <N> and can add a one-time contribution of <N> today. The combined amount earns <N> annually in the stated scenario. An earlier retirement in <N> years requires capital of <N>, while a later retirement in <N> years requires <N>. Either date is feasible only if projected capital exceeds its date-specific requirement by at least <N>. Prefer the earlier date whenever it is feasible; otherwise choose the later date if feasible. Which retirement date should be selected?",
+   "type": "enum"
+  },
+  "H070": {
+   "sha256": "c9d3fe676a485dd46070db9257861a6e079d520b88ee0f8e0b1e05c129e5ff44",
+   "shape": "A transfer is charged a proportional fee ratio of <N> and then a fixed network fee of <N> USD, after which a rebate of <N> USD is credited. Determine the exact gross transfer amount required for the recipient to obtain exactly <N> USD. Reverse the stages in order by removing the rebate, restoring the fixed fee, and dividing by the proportional-fee retention ratio. Carry all arithmetic exactly, then report the required gross transfer in USD using half-up rounding to two decimal places.",
+   "type": "decimal"
+  },
+  "H071": {
+   "sha256": "0d1bd4b352a64fade0d89a3481520005d72406ea2de422bc5fac2b6b6ce972f0",
+   "shape": "A portfolio must keep the sum of market-shock loss and liquidity-spread cost within <N>. The market shock ratio is <N>, its loss sensitivity is <N>, and the liquidity spread ratio is <N>. Both loss components scale with the same portfolio value. Compute the maximum portfolio value that exactly exhausts the combined loss budget.",
+   "type": "decimal"
+  },
+  "H072": {
+   "sha256": "6348be18acec986edf10f53ab5f5f54b1e205f322b62e17bfa0db86e0a3e362b",
+   "shape": "An asset has original cost <N> and accumulated depreciation of <N> in USD millions. Scenario A revises residual value to <N> and applies per-subperiod depreciation ratio <N>; Scenario B uses <N> and <N>. Under this fictional scenario rule, the next reporting interval contains exactly three equal sequential subperiods. In each subperiod, the scenario-specific ratio applies again to the balance above residual value, while residual value itself is not depreciated. A scenario qualifies only if its exact cumulative three-stage depreciation is at most <N> and its remaining depreciable balance above residual is at least <N>. Return the qualifying scenario with lower exact cumulative depreciation, choose Scenario A on an exact tie, or return Neither scenario when neither qualifies.",
+   "type": "enum"
+  },
+  "H073": {
+   "sha256": "ad7a6f0f174770e378c68c47ab55f2dac6575aa9172ee2b3c6cc2338a73adfaa",
+   "shape": "All USD amounts are per share. An investor expects gross terminal sale proceeds <N> and holding-period dividend cash <N>. Selling incurs exit cost <N>, while buying incurs entry cost <N> in addition to the quoted purchase price. Complete acquisition outlay is the quote plus entry cost. Simple nonannualized total return is net terminal receipts minus complete acquisition outlay, divided by that outlay. For target ratio <N>, where <N> means <N>%, compute the exact binding quoted purchase price at which total return equals the target. Ignore taxes, financing, discounting, and dividend reinvestment. Carry the threshold exactly, then report it using half-up rounding to cents. The displayed amount is a rounded report of the exact threshold, not necessarily the greatest executable whole-cent quote.",
+   "type": "decimal"
+  },
+  "H074": {
+   "sha256": "5d637a371bdadccdddcf436298a3a9b19828fa0b4c3938dfeaf0ae0154f0b2ec",
+   "shape": "An issuer will split a total financing principal between a green-bond tranche and a conventional tranche. The green tranche receives share <N>, earns annual yield ratio <N>, and compounds for <N> annual periods. The remaining principal funds the conventional tranche, which earns annual yield ratio <N> and compounds for <N> annual periods. Total maturity repayment equals the green principal share multiplied by its compound maturity factor plus the conventional principal share multiplied by its compound maturity factor. Given the total maturity-repayment cap <N>, compute the maximum total principal that makes repayment exactly equal to the cap.",
+   "type": "decimal"
+  },
+  "H075": {
+   "sha256": "f8a70839fe6ceb27f961844a2e0324a18cdacda159714e02c2b30e3d92cc3466",
+   "shape": "An account must reach <N> USD after <N> whole annual compounding periods at annual rate ratio <N>. A later contribution of <N> USD is deposited at a compounding boundary from which exactly <N> whole periods remain, and it earns the same rate. Using exact compounding, what initial principal is required at the start? Report USD to two decimals with half-up rounding.",
+   "type": "decimal"
+  },
+  "H076": {
+   "sha256": "1f9d5816ac8e6d06731bffc28e8c262157b521974797d0652dff628e7dde20ad",
+   "shape": "Apply the fictional scenario-local planning rule stated here, not current law or regulatory guidance. A bank has eligible Tier <N> capital <N> and eligible Tier <N> capital <N>, risk-weighted assets <N>, and total exposure <N>, all in USD millions. The scenario supplies minimum capital ratio <N>, capital buffer ratio <N>, and minimum leverage ratio <N> as decimal ratios. One signed Tier <N> adjustment x changes both Tier <N> capital and total eligible capital by x while leaving Tier <N> capital, risk-weighted assets, and exposure fixed. Add the minimum capital ratio and buffer ratio. The capital constraint requires x to be at least combined_ratio*risk_weighted_assets-(Tier<N>+Tier<N>), while the leverage constraint requires x to be at least minimum_leverage_ratio*total_exposure-Tier<N>. Return the larger gap. Positive x is Tier <N> issuance required, zero is exactly binding, and negative x means the scenario permits withdrawal of -x while both constraints still hold. Independently report the combined capital requirement ratio using half-up rounding to six decimals; use its exact unrounded value downstream. Report x in USD millions using half-up rounding to two decimals.",
+   "type": "decimal"
+  },
+  "H077": {
+   "sha256": "312fae3a66a72c9c35a92f6de8cbd15d9059aea694649372579a07eafbb128a0",
+   "shape": "A company plans two sequential reporting periods. Its unknown opening cash is carried through both periods. Period one has cash inflow <N> and cash outflow <N>. Period two then has cash inflow <N> and cash outflow <N>. Each period-end cash balance must be at least <N>. Assume every stated flow occurs before its period end, only period-end balances are tested, and there are no other cash flows, interest, or intraperiod liquidity requirements. What is the minimum opening cash that satisfies both period-end floors? All cash amounts are in USD millions; use exact arithmetic and round only the final answer to two decimal places using half-up rounding.",
+   "type": "decimal"
+  },
+  "H078": {
+   "sha256": "20e854da136e0cad5b077b8554b541622955a7bcebcf4944c53dc2028e7ab92d",
+   "shape": "A risk desk permits a VaR budget of <N>. The position has daily volatility <N>, uses confidence multiplier <N>, and is held for <N>. Under square-root-of-time scaling, compute the maximum portfolio exposure that keeps parametric VaR within the budget.",
+   "type": "decimal"
+  },
+  "H079": {
+   "sha256": "c70e12ac38b4c0ea1b8282b75bf080980cd363c1462894db1a6a39391f549225",
+   "shape": "A buyer wants a target equity value of <N>. The company has total debt of <N> and cash of <N>, which are the only enterprise-value-to-equity-value adjustments in this scenario, and the buyer values normalized EBITDA at <N>. Due diligence expects a recurring EBITDA deduction of <N> from the reported figure. Determine the minimum reported EBITDA required to support the target equity price: first bridge equity value to enterprise value using net debt, infer required normalized EBITDA, and then restore the deduction.",
+   "type": "decimal"
+  },
+  "H080": {
+   "sha256": "b44f20a873a3aef9f857e121683372694ba8df1963da7bfbcfa21e9c9b7fa002",
+   "shape": "Against one common annual operating baseline, a procurement program alone would deliver <N> USD millions of savings, an IT program alone would deliver <N> USD millions, and implementing both would deliver <N> USD millions. No program delivers zero savings. The standalone estimates overlap, so the combined result is strictly greater than either standalone result but strictly less than their sum. Attribute procurement savings by giving equal weight to its marginal contribution in both possible implementation orders: its procurement-only savings when introduced first, and combined-program savings minus IT-only savings when introduced after IT. What percentage of combined-program savings is attributed to procurement?",
+   "type": "decimal"
+  },
+  "H081": {
+   "sha256": "73571805a1b67f508df28288b036ca4f9cbe8201474e86c87ff5bb7dfdc17982",
+   "shape": "An investor allocates weight w of capital <N> to Strategy A and the complementary weight to Strategy B. The downturn probability is <N>, with the complementary probability assigned to the upside scenario. Strategy B earns upside return <N> and loses <N> in the downturn. Strategy A earns the B upside return plus positive incremental return <N>, but loses the B downturn loss plus positive incremental loss <N>; both resulting Strategy A rates remain below one. The portfolio must end with at least <N> in the upside scenario and at least <N> in the downturn. These two requirements create a nonempty feasible interval strictly inside zero and one for w: the upside requirement supplies the lower endpoint and the downturn requirement supplies the upper endpoint. Portfolio ending values are linear weighted combinations of the two strategies, with no interaction, leverage, fees, or rebalancing. If the exact probability-weighted ending value from allocating all capital to A is greater than that from allocating all capital to B, choose the upper endpoint; otherwise, including an exact tie, choose the lower endpoint. Determine feasibility and select the endpoint using exact unrounded values. Report the selected exact Strategy A weight as a percentage rounded half up to two decimal places; the displayed percentage is a reporting approximation, not the operative exact endpoint.",
+   "type": "decimal"
+  },
+  "H082": {
+   "sha256": "1ac81dd5fd6a7e1b0db1dbcd151c42b366f33bf53ffd1c3488e3ddcad90998b9",
+   "shape": "Treat one carbon credit as covering one ton of CO<N>e. A company has a compliance obligation of <N> tons of CO<N>e, internal abatement capacity <N> tons of CO<N>e, and operational availability <B>. Internal abatement has fixed cost <N> USD and variable cost <N> USD per ton of CO<N>e. Carbon credits cost <N> USD per ton of CO<N>e, with at most <N> ton-equivalent credits available for purchase. The abate-then-buy alternative is fixed: whenever internal abatement is available, it uses exactly the smaller of the compliance obligation and abatement capacity before buying credits for the residual; it does not optimize the abatement quantity. Compare only this specified strategy with a credits-only strategy. Choose the lower-cost feasible strategy, prefer abate-then-buy on a cost tie, choose the sole feasible strategy when only one is feasible, and return no_feasible_strategy when neither is feasible.",
+   "type": "enum"
+  },
+  "H083": {
+   "sha256": "c4c7476cc9f256ef3e4b53d510be304b294ca919ae3df92f0087075ef6e0a2c7",
+   "shape": "An investor owns <N> shares bought at <N> per share and <N> shares bought at <N> per share. Compare selling the complete position now at <N> per share with total sale cost <N>, against holding one period and selling in exhaustive subjective base and downside states. The base terminal sale price is <N>, the downside terminal sale price is <N>, gross terminal dividend is <N> per share in either state, and total future sale cost is <N> in either state. Under this scenario-local convention, sale cost reduces amount realized, positive gain equals amount realized minus the complete two-lot basis, and gain tax ratio <N> applies to each generated positive gain. Terminal dividend tax ratio is <N>. Discount both future after-tax cash states one period using time-value-only rate <N>. Assign subjective downside probability <N> and base probability one minus that value. Current sale qualifies when its exact after-tax cash is at least <N>. Holding qualifies when exact downside-state present value is at least <N>. Rank a qualifying hold strategy by its exact probability-weighted present value against current after-tax cash. If both qualify, choose the higher value and choose Current sale on an exact tie. If only one qualifies, choose it; otherwise return Neither. Prices and dividend are per share; sale costs, basis, proceeds, cash floors, and present values are total-position USD; rates and probabilities are ratios. This is a planning convention, not current tax, legal, or market advice; it gives no loss credit and ignores other taxes, fees, and cash flows.",
+   "type": "enum"
+  },
+  "H084": {
+   "sha256": "56b708589ad210199e4d80505b83af66ec4eb8858381ef76845886209f36f471",
+   "shape": "For one reporting period, a company has positive earnings before tax of <N> USD after deducting all modeled interest expense. Tranche A debt is <N> USD at rate <N>, and tranche B debt is <N> USD at rate <N>. All amounts and rates use the same period. Under a simplified fixed-interest model with no other non-operating items, preferred dividends, or tax adjustments, reconstruct EBIT by adding both interest expenses back to earnings before tax. Then compute degree of financial leverage as EBIT divided by earnings before tax. Use exact arithmetic, independently round the two checkpoints and final to four decimals with half-up rounding, and never feed displayed checkpoints into the gold calculation.",
+   "type": "decimal"
+  },
+  "H085": {
+   "sha256": "b389a70b453c90720d6adbbb62150fa4f928e3302f165e1294e1fe8ab456bfe5",
+   "shape": "A borrower compares the current loan with a refinance over the same next two equal-length periods. Both paths start from outstanding principal of <N>. The current loan uses an effective rate of <N> and a payment of <N> at each period end. The refinance capitalizes a fee of <N> into its opening balance, then uses an effective rate of <N> and a payment of <N> at each period end. Interest accrues before each payment. What is the signed second-period ending-balance difference, current loan minus refinance?",
+   "type": "decimal"
+  },
+  "H086": {
+   "sha256": "095ac26a1039fef0a7363fda641ac44d4c787507937ea8166b6238abec87abc5",
+   "shape": "A company starts with revenue <N>, faces downturn ratio <N>, and forecasts recovery ratio <N> if it makes one-period cash outlay <N>. Baseline operating cost <N> rises by cost-inflation ratio <N>. The company has available cash <N> and requires one-period scenario surplus of at least <N>. Expansion surplus applies both downturn and recovery, then subtracts inflated operating cost and the cash outlay. Defensive surplus applies only the downturn and subtracts inflated operating cost. Return expansion if its surplus threshold and cash requirement both pass. Otherwise return defensive if its surplus threshold passes, and wait if neither passes.",
+   "type": "enum"
+  },
+  "H087": {
+   "sha256": "fa8c6b5d8212920043214abb1c11ae89598c2ba9d7444a2fda0b83c06b7017e3",
+   "shape": "Two post-merger initiatives are evaluated over the same first-year horizon. The cost-synergy initiative succeeds with marginal probability <N> and contributes <N> USD millions whenever it succeeds. The revenue-synergy initiative succeeds with marginal probability <N> and contributes <N> USD millions whenever it succeeds. Assume the two initiative outcomes are independent. If both succeed, they also create incremental joint benefit <N> USD millions beyond the two standalone benefits. Compute the percentage of total expected gross integration benefit attributable specifically to that incremental joint benefit. Carry exact probabilities and amounts through the calculation.",
+   "type": "decimal"
+  },
+  "H088": {
+   "sha256": "005bc503e8b663ff6622dfe1cb1d2358eaea009d69a0ff59b76d969fede50124",
+   "shape": "A merchant's batch has gross sales before chargebacks of <N> across <N> transactions. The processor charges rate <N> on those gross sales plus <N> per transaction. Chargebacks included in the gross-sales amount total <N>, of which fraction <N> is recovered. The processor also withholds reserve <N>. Compute all deductions using exact values and report the merchant's net settlement after variable fees, fixed fees, unrecovered chargebacks, and reserve. What is the net settlement?",
+   "type": "decimal"
+  },
+  "H089": {
+   "sha256": "98e24da39b642f226f22042dbf68ffa45b8e27dff038fdeb1e9e5d6523e34460",
+   "shape": "Apply the following fictional scenario-local KYC control-credit policy, not current law or regulatory guidance. A customer has source-of-funds risk score <N>, jurisdiction risk score <N>, existing verified-control credit <N>, and standard residual-risk ceiling <N>. All four values use the same additive risk-point scale. Existing and additional verified-control credit each reduce residual risk one-for-one, and additional credit cannot be negative. What is the minimum additional verified-control credit required so that the source-of-funds score plus the jurisdiction score, less existing and additional credit, is no greater than the residual-risk ceiling? Report the required credit in dimensionless risk-score points.",
+   "type": "decimal"
+  },
+  "H090": {
+   "sha256": "cb21a8b8d0d2e5f7acac018e75aafc74d6bd2da18b58e0678a2f8658856e2226",
+   "shape": "A company begins with assets of <N> and liabilities of <N> in USD millions. Financing Package A adds equity proceeds of <N> and debt proceeds of <N>. Financing Package B adds equity proceeds of <N> and debt proceeds of <N>. Under this scenario's internal three-stage leverage-covenant ratchet, the permitted liabilities-to-assets ceiling starts at <N>. At each stage, the company reduces the remaining ceiling by the same fraction <N>, so the final cumulative ceiling is (<N>-t)^<N>. This is a scenario-specific financing policy, not a general accounting or regulatory rule. A package qualifies only if its post-financing equity is at least <N> and its exact liabilities-to-assets ratio does not exceed that final inclusive ceiling. Return the qualifying package with the lower exact ratio, choose Package A on an exact tie, or return Neither package when neither qualifies.",
+   "type": "enum"
+  },
+  "H091": {
+   "sha256": "deea43c85bbc1c00e6477c967e9da75ab244657eb99f7844176364ef8922783a",
+   "shape": "At one valuation date, verified recurring EBITDA is <N> and target-controlled confirmed run-rate savings not already included in that amount are <N>. The base case applies valuation multiple <N>. In a customer-attrition state, recurring EBITDA falls by <N> and the valuation multiple compresses to <N>; that state occurs with probability <N>. Define expected customer value loss as the state probability times the difference between base-case and attrition-case enterprise values. A separate, non-overlapping gross tax exposure of <N> crystallizes with probability <N>, and insurance recovers fraction <N> if it crystallizes. Define expected tax loss as crystallization probability times the uninsured exposure. Compare the two exact unrounded expected losses and return exactly Customer attrition loss is larger, Tax exposure loss is larger, or Expected losses are equal. This is a scenario-local diligence attribution, not a statement of current law or a general risk ranking.",
+   "type": "enum"
+  },
+  "H092": {
+   "sha256": "6d24913fae5a7f9f4e916b303eaeefbbbbb7b400ea8434437024d63ad51e392d",
+   "shape": "Two teams independently prepared operating cash-flow schedules for the same reporting period, so classification or data-quality differences may make them disagree. The indirect schedule starts with after-tax net income <N>, adds nonoverlapping depreciation <N> and amortization <N>, subtracts the cash uses from an increase in accounts receivable <N>, an increase in inventory <N>, and a decrease in accounts payable <N>, then adds an increase in accrued liabilities excluding income taxes payable <N> and an increase in income taxes payable <N>. The direct schedule subtracts non-tax operating cash payments <N> and cash income taxes paid <N> from operating cash receipts <N>. Normalize each schedule's operating cash flow by reported revenue <N>. This scenario defines a fictional reconciliation score as the mean of those two margins minus the square of their signed difference. It is a scenario-local diagnostic, not a GAAP, IFRS, or standard audit metric. Report the score as a percentage. All monetary inputs are USD millions for the same period; use exact arithmetic and round only the final percentage to two decimal places using half-up rounding.",
+   "type": "decimal"
+  },
+  "H093": {
+   "sha256": "eaf4b91c29f2df74bb9358e6b4ad1cdc3e506686c4039bfe1f803f02b0090370",
+   "shape": "A sentiment model must reach a total score of <N>. Its news contribution equals <N> multiplied by average news polarity <N> and influence factor <N>. Its tweet contribution equals <N> multiplied by average tweet polarity <N> and an unknown engagement ratio. The total score is the sum of these two contributions. What engagement ratio reaches the target? Report the required ratio using half-up rounding to six decimal places.",
+   "type": "decimal"
+  },
+  "H094": {
+   "sha256": "30865980df38748e49c081b766ba4c4c63f030ea5fb126fae5e8b9086236e9f0",
+   "shape": "An investment requires an initial outlay of <N> at time <N>, pays <N> at the end of year <N>, and pays <N> at the end of year <N>. Starting from the annual effective trial rate <N>, evaluate the exact two-year NPV and perform exactly one Newton-Raphson update using the positive magnitude of the NPV derivative. The trial NPV is guaranteed to be positive, so the update moves upward while remaining below the unique economic IRR. Report the updated trial rate as an annual percentage. Do not iterate again and do not describe the result as the exact or converged IRR.",
+   "type": "decimal"
+  },
+  "H095": {
+   "sha256": "6a813f73f67c233d7d652402c87d4df548751da39f6b4012ba6552c0748d9dbd",
+   "shape": "All measures refer to the same annual diligence review period. Verified recurring EBITDA before the proposed adjustment is <N>. Reported operating cash flow is <N>, including a temporary working-capital release of <N> and a one-time tax refund of <N> that the reviewer removes. The internal screen requires normalized operating cash flow divided by EBITDA after the proposed noncash management add-back of <N> to be at least <N>. Assume the proposed add-back has no operating-cash-flow effect. Solve for the maximum noncash add-back supported by this scenario-local screen, then report the signed headroom relative to the proposed add-back. A positive result means unused screening capacity and a negative result means the proposal exceeds the screen. This is an internal scenario calculation, not validation or approval of the add-back.",
+   "type": "decimal"
+  },
+  "H096": {
+   "sha256": "525bd7c700681d7cf5682c7a16a6b973660abfb127fcb0b1b06aa9dae363e599",
+   "shape": "A firm must support a high-risk allocation of <N>. Before applying its risk-appetite ratio <N>, it increases the allocation target by diversification buffer ratio <N>. It also keeps <N> outside the allocable capital pool. Compute the minimum total capital required to fund the buffered high-risk allocation and the reserve.",
+   "type": "decimal"
+  },
+  "H097": {
+   "sha256": "edcb7c62340b48d7ff02304871fcc0460f28d5843d03927cc7dd5409e8c8d74f",
+   "shape": "Under this scenario-local compliance policy, an institution has current capital <N> against required capital <N>, and liquid assets <N> against required liquidity <N>. Closing one dollar of capital gap costs ratio <N>, closing one dollar of liquidity gap costs ratio <N>, every submitted plan also costs <N>, and the total budget is <N>. Requirements exceed current resources. Return exactly `full_remediation`, `capital_priority`, `liquidity_priority`, or `no_feasible_plan`. Use `full_remediation` when both gaps plus filing are affordable. Otherwise prescribe the single-gap plan for the larger gap, using `capital_priority` on an exact gap tie and `liquidity_priority` when the liquidity gap is larger; return the prescribed token only if that plan is affordable, and return `no_feasible_plan` otherwise.",
+   "type": "enum"
+  },
+  "H098": {
+   "sha256": "9fe399824f433de531667ab14db31dcf14f7b15edc69f7fc12b80af4c851eecb",
+   "shape": "An investor has a portfolio worth <N> and requires its stressed value to remain at or above <N>, which is strictly below the current portfolio value. In the stated stress scenario, the risky asset loses <N> of its allocated amount while all capital outside the risky asset retains its value. Policy also caps the risky asset's portfolio weight at <N>. Compute the exact maximum permitted risky-asset weight. Apply the stress floor and policy cap to the unrounded exact weight, then report that weight as a percentage rounded half up to two decimal places; the displayed percentage is a reporting approximation, not the operative exact cap.",
+   "type": "decimal"
+  },
+  "H099": {
+   "sha256": "b058f5e8ebcc579e7a69a0ff442d9c2fb93630f3e51dab7f26c87f408cd9b462",
+   "shape": "A crypto asset is currently priced at <N> USD per token after a global shock reduced its pre-shock price by loss ratio <N>. A subsequent liquidity response increased the resulting post-shock price by a rebound ratio equal to <N> times the shock loss ratio. What was the price immediately before the shock? Apply the loss and rebound sequentially using exact arithmetic, and round only the final price to two decimals with half-up rounding.",
+   "type": "decimal"
+  },
+  "H100": {
+   "sha256": "03226fa03a4fb80640484d32d1191b52c44ea0b6865a0a085e93580ab12223e5",
+   "shape": "An investment account begins a measurement period at value <N>. A contribution of <N> is added after <N> of the period has elapsed. At period end, the post-distribution account value is <N> and a terminal cash distribution of <N> is paid at that same time; the ending value excludes that distribution. There are no other external cash flows. Under the standard Modified Dietz convention, weight the contribution by the fraction of the period remaining and give the terminal distribution zero denominator weight. What is the period's Modified Dietz ROI as a percentage?",
+   "type": "decimal"
+  },
+  "H101": {
+   "sha256": "b92b9d2917af32cb6287ca5fe92c59ba9d8f1d55e5f044733ee7e960eebd3fb0",
+   "shape": "Apply the fictional scenario-local compliance planning policy given here, not current law or regulatory guidance. Inherent risk is <N>. Plan A has per-stage fractional risk reduction <N>, implementation cost <N> USD, monitoring cost <N> USD, and fractional cost credit <N>. Plan B has per-stage fractional risk reduction <N>, implementation cost <N> USD, monitoring cost <N> USD, and fractional cost credit <N>. For each plan, apply its stated reduction to surviving risk in exactly three sequential stages with no risk replenishment; equivalently, multiply inherent risk by one minus that plan's per-stage fraction three successive times. Net cost equals the sum of implementation and monitoring costs multiplied by one minus its credit fraction. A plan qualifies only if residual risk is no more than <N> and net cost is no more than <N> USD. If both qualify, choose the lower exact net cost, with Plan A on an exact tie. If only one qualifies, choose it; otherwise return Neither plan. Report Plan A's one-stage retained-risk factor independently to six decimal places, and return the selected plan from exact predicates and costs.",
+   "type": "enum"
+  },
+  "H102": {
+   "sha256": "0e742b5f0b33d13067196fca6ce9bb73a3985f32f5d49e9037c18ee6c2d73e53",
+   "shape": "Over one annual period, a DeFi user already has <N> USD earning yield ratio <N>. A second pool offers yield ratio <N>. The protocol charges a fixed annual fee of <N> USD that does not depend on the added principal. Determine the additional stake required in the second pool to deliver a net annual reward of <N> USD. Report the result in USD using half-up rounding to two decimal places.",
+   "type": "decimal"
+  },
+  "H103": {
+   "sha256": "808a1b9b48a16614c827943e88b38a8344a751a4ba71af20e42a47503b7d828a",
+   "shape": "Apply the fictional scenario-local transaction-review policy given here, not current law or regulatory guidance. Three related cash transactions are <N>, <N>, and <N>. The aggregate review threshold is <N>. The customer's historical average cash transaction is <N>, and the baseline largest-to-history spike-ratio threshold is <N>. At each of exactly three sequential adjustment stages, reduce the surviving spike threshold by fraction <N> of its then-current value, with no replenishment between stages; the effective threshold is the baseline multiplied by one minus that fraction three successive times. Define the spike ratio as the largest transaction divided by the historical average. The policy also records <B> and <B>. Return Enhanced review when aggregate volume strictly exceeds its threshold and the spike ratio strictly exceeds the effective threshold, or when either critical flag is <B>. Otherwise return Standard review. Report the one-stage threshold-retention factor independently using half-up rounding to six decimals, then return the exact policy route.",
+   "type": "enum"
+  },
+  "H104": {
+   "sha256": "c6a64b96034ba8ad42a7ad5a5dbef22ee608ad639967fbed4b9e1277c7a3dcf1",
+   "shape": "Compare two financing scenarios using corporate tax rate ratio <N> and maximum permitted WACC percentage <N>. Under this scenario's internal leverage covenant, debt ratio means debt divided by debt plus equity, D/(D+E), and its permitted ceiling starts at <N>. At each of exactly three sequential covenant stages the company reduces the remaining ceiling by the same fraction t=<N>, so the final shared ceiling is (<N>-t)^<N>. This is a scenario-specific financing policy, not a general regulatory rule. Scenario A has equity value <N>, debt value <N>, cost of equity percentage <N>, and pre-tax cost of debt percentage <N>. Scenario B has equity value <N>, debt value <N>, cost of equity percentage <N>, and pre-tax cost of debt percentage <N>. A scenario qualifies only if both its exact WACC and D/(D+E) debt ratio satisfy their limits. Return exactly `Scenario A`, `Scenario B`, or `Neither scenario`; among qualifying scenarios return the one with lower exact WACC, choose `Scenario A` on an exact tie, and return `Neither scenario` when neither qualifies.",
+   "type": "enum"
+  },
+  "H105": {
+   "sha256": "b87dbf6dffeab78a9a35b7f50c77d9469c70dee7a18def12b048ddf52380fd01",
+   "shape": "A social-impact program has launch cost <N> and monitoring cost <N>. Each beneficiary-equivalent unit is expected to create net monetized social value <N>. The investor requires total social value, defined as beneficiary-equivalent scale multiplied by value per unit, to exceed the combined fixed costs by the surplus ratio <N>; equivalently, required social value is combined fixed costs multiplied by one plus that ratio. Compute the beneficiary-equivalent scale that exactly meets this requirement.",
+   "type": "decimal"
+  },
+  "H106": {
+   "sha256": "8250dabe7c72c5ac73f000b4ffac95b5dd22e041e0b1cc63deaf8eb0742a6b1d",
+   "shape": "A company is comparing the order of two actions across two equal-length operating periods. <N> is the net total-asset base that remains after a <B> reduction of <N>, and <N> is the modernization program's net capitalized addition to total assets. Modernization raises run-rate net sales by <N>, while the reduction lowers run-rate net sales by <N>; each effect begins at its action date, persists, and the two sales effects compound. In the capex-first order, period-one assets equal the pre-action base plus the addition and period-two assets equal the retained base plus the addition. In the reduction-first order, period-one assets equal the retained base and period-two assets equal the same final retained-plus-addition base. For each order, compute the arithmetic mean of the two period run-rate sales amounts divided by the arithmetic mean of the two period asset bases, equivalently their sums divided by their sums, and normalize this turnover by the common pre-action turnover. What is the reduction-first normalized factor minus the capex-first normalized factor, expressed as a percentage of baseline turnover?",
+   "type": "decimal"
+  },
+  "H107": {
+   "sha256": "c56ae280d85f04680852670c92f708453ee2e154ef0dccc7a6db8fb401bd824e",
+   "shape": "Starting with USD capital <N>, compare two closed FX routes. Route A follows USD to X to Y to USD: <N> is X per USD, <N> is Y per X, and <N> is USD per Y. Route B follows USD to Z to USD: <N> is Z per USD and <N> is USD per Z. After each closed route, apply its single aggregate proportional fee <N> or <N> once to final USD proceeds, then subtract fixed USD cost <N> or <N>. A route qualifies only if its exact terminal value meets return hurdle <N> on starting capital. Select the qualifying route with the higher exact terminal value, select Route A when both qualify and tie exactly, or return No trade when neither qualifies.",
+   "type": "enum"
+  },
+  "H108": {
+   "sha256": "a3dd86a87e7cc50d6048bb679e0dcfd600aceadca32ba8ebbdde4d8917ba1587",
+   "shape": "Under the simplified tax rules stated for this scenario, a taxpayer's total tax budget is <N>, of which <N> is already committed. Additional taxable income is charged at <N>, and only <N> of additional gross income enters the taxable base. Compute the exact maximum additional gross-income threshold that stays within the tax budget. Test the budget using the unrounded exact threshold, then report that threshold in USD rounded half up to two decimal places; the displayed amount is a reporting approximation of the exact maximum.",
+   "type": "decimal"
+  },
+  "H109": {
+   "sha256": "09bd12e32b6706faf3e402157d12f9b4cc0fa5557b032a296b0d41aa69d7d55b",
+   "shape": "A company has <N> USD of quick assets excluding inventory and <N> USD of current liabilities. Its required post-transaction quick ratio is one plus positive uplift ratio <N>. It can sell sufficient inventory at net recovery rate <N> of carrying amount. Fraction <N> of the recovered cash remains in quick assets, while the complementary fraction immediately repays current liabilities at par. The recovery rate is net of all modeled sale costs, and there are no other balance changes. What minimum inventory carrying amount must be sold to reach the required quick ratio exactly? Use exact arithmetic, round the independently displayed checkpoint to six decimals, and round the final USD amount to two decimals with half-up rounding; never feed the displayed checkpoint into the gold calculation.",
+   "type": "decimal"
+  },
+  "H110": {
+   "sha256": "02d1043703612954a6b14b91c999d2baa123ec8577178195aa53e1424059845b",
+   "shape": "Compare social-impact program A, with fixed cost <N>, aggregate delivery cost per beneficiary-equivalent unit <N>, beneficiary-equivalent volume <N>, monetized social value per unit <N>, and per-opportunity success probability <N>, against program B with corresponding inputs <N>, <N>, <N>, <N>, and <N>. For each program, total cost equals fixed cost plus aggregate per-unit delivery cost multiplied by volume. Each program has exactly three independent delivery opportunities sharing its supplied per-opportunity probability. Its stated total cost covers all three opportunities, and its planned social value is realized once, not once per success, if at least one opportunity succeeds. Thus each program's effective delivery probability is one minus the probability that all three opportunities fail. Expected net social value equals planned monetized social value multiplied by that effective probability, minus total cost. A program is feasible only when total cost does not exceed <N> and its volume reaches <N>. Choose the feasible program with higher expected net social value, prefer program_a on a tie, choose the sole feasible program, or return no_feasible_program when neither qualifies.",
+   "type": "enum"
+  },
+  "H111": {
+   "sha256": "e4779283179d1c9a5a81589477c2ebc391062fe8e72d473200c6481eab34d4e1",
+   "shape": "Value a target using two methods under the buyer's stated reconciliation policy. The revenue method uses revenue <N> and revenue multiple <N>. The EBITDA method uses EBITDA <N> and EBITDA multiple <N>. Compare the two enterprise values: their dispersion is the higher value minus the lower value, and the permitted dispersion equals the lower value multiplied by <N>. If the methods are consistent within that tolerance, use their mean enterprise value; otherwise use the lower enterprise value. Then deduct total debt <N> and add cash <N>, which are the only enterprise-value-to-equity-value adjustments in this scenario. Report the reconciled equity value.",
+   "type": "decimal"
+  },
+  "H112": {
+   "sha256": "54b1615d783b9b2823b9858906fe461f2ebb98aa9b4deffec23f0097e6718230",
+   "shape": "Over one common annual period, a DeFi liquidity position has capital of <N> USD, earns fee-yield ratio <N>, and incurs impermanent-loss ratio <N>. An optional hedge covers <N> of that loss and, only when activated, costs <N> of capital. If the exact unhedged loss strictly exceeds the risk limit of <N> USD, activate the hedge; otherwise leave the position unhedged and pay no hedge cost. Return the selected net profit or loss in USD, excluding return of the original capital, using half-up rounding to two decimal places.",
+   "type": "decimal"
+  },
+  "H113": {
+   "sha256": "8f209d3394d3e1ff39a165f86a303f83d5d8837335dbac0c1b17ba55098f5f62",
+   "shape": "A portfolio worth <N> has signed weighted common-factor return loadings <N> and <N>, each expressed as a ratio. Under the stated common-factor covariance convention, aggregate the loadings before constructing the variance radicand. Apply confidence multiplier <N>, add liquidity charge <N>, and compare the result with stress loss <N>. Compute the required capital as the larger loss measure.",
+   "type": "decimal"
+  },
+  "H114": {
+   "sha256": "48ecbd85089ee292a82f21531fee2b3c12b59071565cb51e3a8f38b2b7fdb487",
+   "shape": "A household must cover essential outlays of <N>, planned discretionary outlays of <N>, and an emergency-reserve contribution of <N> while also saving <N> of total income in a separate savings commitment. Compute the exact minimum total-income threshold that meets all four commitments. Determine feasibility from the unrounded exact threshold, then report that threshold in USD rounded half up to two decimal places; the displayed amount is a reporting approximation of the exact minimum.",
+   "type": "decimal"
+  },
+  "H115": {
+   "sha256": "0dd3dc40679d6c392eeba1e38ca0427e16ac53c3444d4c3e591ad6b69ceaec6a",
+   "shape": "An investment requires <N> at time <N> and has unchanged tax basis <N>. It pays the after-tax distribution <N> at the end of year <N> without changing that basis. At the end of year <N> it is sold for <N>; selling costs equal the fraction <N> of gross price, and capital-gains tax equals <N> of the positive gain measured as net sale proceeds after selling costs minus tax basis. Starting from annual effective trial rate <N>, evaluate exact NPV and form one positive Newton-Raphson correction using the negative-derivative magnitude. Apply the fixed absolute rate-step cap <N>, add the smaller of the raw correction and cap to the trial rate, and report the result as an annual percentage. Do not iterate again or describe the result as an exact IRR or a complete adaptive trust-region method.",
+   "type": "decimal"
+  },
+  "H116": {
+   "sha256": "84d3ea0f7839ecd655aea05efafd94f41e7e0a92f80c766339783bf92125b89b",
+   "shape": "Given projected revenue of <N>, operating expenses of <N>, and a required operating margin of <N>, determine the maximum COGS that can be incurred while exactly meeting the margin requirement. Report the result in USD millions.",
+   "type": "decimal"
+  }
+ },
+ "helper": {
+  "file": "hlib.py",
+  "sha256": "e2a7193ebdb799f5ff99422040e100303983046ee04425bc547c8ff3f9664f8f"
+ },
+ "rule": "numbers.mask_numbers(question), then every literal true/false (any case) replaced by <B>, whitespace runs collapsed to one space, stripped",
+ "source": "hidden/forms/final (forms), hidden/hlib.py (helper), hidden/templates.json (shapes)",
+ "templates_json_sha256": "135c3a3119e7493c373a5a45c11530b5974b864678b250e144a01b75e3a2ad5b"
+}

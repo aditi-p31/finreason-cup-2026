@@ -1,0 +1,122 @@
+finreason-task3-engine
+Copyright 2026 Aditi Patodiya
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+It is the Task 3 (Financial Audit Verification) entry of team "Patodiya
+Research" in the FinReason Cup at IEEE BigData 2026.
+
+This product implements, derives from, or reads the third-party material
+listed below. Names of the cup, its organizers, XBRL US and IEEE identify that
+material only. They do not imply endorsement. The Apache License covers this
+product's own code and text only, not the material below.
+
+
+1. XBRL US Data Quality Committee (DQC) rules and element lists
+---------------------------------------------------------------
+
+Source:  dqc_us_rules, https://github.com/DataQualityCommittee/dqc_us_rules
+         read on 2026-10-01: the XULE rule source of DQC_US_0015,
+         DQC_US_0117 and DQC_US_0126 (US 2023 and 2026 rule sets),
+         lib/functions.xule, the US 2026 constant files, the rule
+         documentation, and the DQC_US_0015 element lists
+         dqc_us_rules/resources/DQC_US_0015/dqc_15_usgaap_<year>_concepts.csv
+         (2021 to 2026) and dqc_15_srt_*_concepts.csv.
+Licence: the DQC licence, https://xbrl.us/dqc-license, which points to
+         License.md in that repository. A verbatim copy is in
+         engine/resources/DQC-LICENSE.md. It is a custom licence, not the
+         Apache License: it allows derivative works that assist in
+         implementing the rules to be prepared, copied, published and
+         distributed, provided the copyright notice and the permission
+         paragraph below are included on all such copies and derivative works.
+
+The copyright notice and permission paragraph of the DQC material, as the
+licence requires:
+
+   All published final recommendations of the Data Quality Committee are
+   copyrighted as follows, whether the copyright is carried explicitly in the
+   material (such as .md files, program code and some .xml files), or not in
+   the file (such as .csv files, which have no means of embedding copyright
+   and legal wording):
+
+   Copyright © 2015-present, American Institute of CPAs (AICPA)
+   Copyright © 2015-present, Calcbench, Inc.
+   Copyright © 2015-present, Toppan Merrill LLC
+   Copyright © 2015-present, Workiva Inc.
+   Copyright © 2015-present, XBRL US, Inc.
+
+   This document and translations of it may be copied and furnished to
+   others, and derivative works that comment on or otherwise explain it or
+   assist in its implementation may be prepared, copied, published and
+   distributed, in whole or in part, without restriction of any kind,
+   provided that the above copyright notice and this paragraph are included
+   on all such copies and derivative works. However, this document itself may
+   not be modified in any way, such as by removing the copyright notice or
+   references to XBRL US except as required to translate it into languages
+   other than English. Members of XBRL US agree to grant certain licenses
+   under the XBRL US Intellectual Property Policy
+   (https://xbrl.us/home/about/legal/).
+
+The DQC licence also disclaims all warranties for that material; see
+engine/resources/DQC-LICENSE.md.
+
+What this product takes from that material:
+
+- engine/resources/dqc_0015_non_negative_elements.txt is derived from the
+  DQC_US_0015 element lists: the union of the element local names in the
+  twelve lists above (6,696 names, no values, no other columns). Its header
+  comment names the source lists.
+- engine/engine.py and engine/xbrl.py re-implement the logic of the three
+  rules in Python from the XULE source and the rule documentation: rule
+  scopes, the eleven axes DQC_US_0117 checks, the DQC_US_0015 member and axis
+  exclusions, and the tolerance functions. They are this product's own code.
+- No XULE, CSV or documentation file of the DQC is included, no DQC software
+  is executed, and no per-filing DQC result was used (the repository's tests/
+  folder, which holds rule output for named filings, was not downloaded).
+
+The DQC rule files also point to https://xbrl.us/dqc-patent for a patent
+notice. On 2026-10-03 that address redirected to plugin/xule/PatentNotice.md
+in the same repository, a file its master branch does not contain.
+
+
+2. FinReason Cup Task 3 starter kit (MIT), not included
+-------------------------------------------------------
+
+Source:  https://github.com/The-FinAI/IEEE-bigdata-cup, folder
+         finreason_task3/. The validator, judge and data-preparation code
+         this product runs or imports is the same from commit
+         089a2a3a8156b3532819dcf9a8f6a2f368b7bb93 (2026-09-24) through
+         11f8673e3645c4a00fb47f668b71fa1cf270159f (2026-09-29), the last
+         change to the folder as of 2026-10-03.
+Licence: MIT License, Copyright (c) 2026 FinReason Cup 2026 Task 3 organizers.
+
+This product does not include, vendor or modify the kit. reproduce.py runs the
+kit's scripts/validate_submission.py from the user's copy as a subprocess, and
+tools/score_split.py and tools/holdout_overlap.py --score import the kit's
+evaluation and task3_core packages (the deterministic judge). The kit is found
+at ./kit, or through --kit or the FINREASON_TASK3_KIT environment variable.
+
+
+3. FinReason Cup Task 3 data (CC BY 4.0), not included
+------------------------------------------------------
+
+Ranked inputs: Hugging Face dataset YanAdjeNole/FinReason-Task3, revision
+f32033b1dc0c1b0ef080740ed5ee02ef6b04c931 (2026-09-28), files
+development_inputs.jsonl and test_inputs.jsonl, published by the FinReason
+Cup organizers under the Creative Commons Attribution 4.0 International
+licence (https://creativecommons.org/licenses/by/4.0/).
+
+Practice set: Hugging Face dataset TheFinAI/FinMR, revision
+3b1babd0487c1d5a7229f7a26a1654d3fb693e92 (332 cases), Creative Commons
+Attribution 4.0 International. FinMR is one of the three tasks of the
+FinAuditing benchmark, and the organizers' kit asks users of the data to cite
+Y. Wang et al., "FinAuditing: A Financial Taxonomy-Structured Multi-Document
+Benchmark for Evaluating LLMs", in Proceedings of the 49th International ACM
+SIGIR Conference on Research and Development in Information Retrieval
+(SIGIR '26), pp. 3456-3463, 2026, https://doi.org/10.1145/3805712.3808578
+(BibTeX in README.md, Citation). The kit's scripts/prepare_public_dev.py
+turns it into data/public_dev.jsonl and data/public_dev_inputs.jsonl.
+
+This product contains no case text and no answer key. split.json holds
+practice case ids (DEV_000000 to DEV_000331) and counts computed from the
+practice inputs. reproduce.py holds the sha256 digests of the published input
+files and of this product's own prediction files.

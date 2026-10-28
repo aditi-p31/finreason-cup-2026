@@ -1,0 +1,153 @@
+{
+ "hidden_answer_types": {
+  "decimal": 264,
+  "enum": 84
+ },
+ "hidden_cases": 348,
+ "hidden_slots": 456,
+ "hidden_templates": 121,
+ "instances_per_hidden_template": {
+  "1": 5,
+  "2": 5,
+  "3": 111
+ },
+ "route1_stated_formula": {
+  "dev_intermediate_advanced": {
+   "equals_sign_detector": {
+    "hits": 46,
+    "n": 174,
+    "rate": 0.264368
+   },
+   "prose_definition_detector": {
+    "hits": 42,
+    "n": 174,
+    "rate": 0.241379
+   }
+  },
+  "hidden_cases": {
+   "bindable_symbolic_formula": {
+    "hits": 9,
+    "n": 348,
+    "rate": 0.025862
+   },
+   "equals_sign_detector": {
+    "hits": 3,
+    "n": 348,
+    "rate": 0.008621
+   },
+   "prose_definition_detector": {
+    "hits": 78,
+    "n": 348,
+    "rate": 0.224138
+   }
+  },
+  "hidden_templates": {
+   "bindable_symbolic_formula": {
+    "hits": 3,
+    "n": 121,
+    "rate": 0.024793
+   },
+   "equals_sign_detector": {
+    "hits": 1,
+    "n": 121,
+    "rate": 0.008264
+   },
+   "prose_definition_detector": {
+    "hits": 28,
+    "n": 121,
+    "rate": 0.231405
+   }
+  }
+ },
+ "route2_cross_template": {
+  "by_lexical_similarity": {
+   "0.21-0.30": {
+    "hits": 0,
+    "n": 43,
+    "rate": 0.0
+   },
+   "0.30-0.50": {
+    "hits": 3,
+    "n": 49,
+    "rate": 0.061224
+   },
+   "0.50-0.80": {
+    "hits": 5,
+    "n": 10,
+    "rate": 0.5
+   },
+   "<=0.21": {
+    "hits": 0,
+    "n": 64,
+    "rate": 0.0
+   },
+   ">=0.80": {
+    "hits": 3,
+    "n": 3,
+    "rate": 1.0
+   }
+  },
+  "int_adv_all_11_exact": {
+   "hits": 11,
+   "n": 169,
+   "rate": 0.065089
+  },
+  "nearest_labelled_template_similarity": {
+   "held_out_seen_template": {
+    "at_or_above_0.30": 139,
+    "max": 0.9864,
+    "median": 0.2839,
+    "n": 290
+   },
+   "hidden_template": {
+    "at_or_above_0.30": 0,
+    "max": 0.2096,
+    "median": 0.0904,
+    "n": 121
+   }
+  },
+  "protocol": "leave one TEMPLATE out: for each intermediate/advanced labelled template, run the induced program of the lexically nearest other template of the same arity against all 11 of its gold instances"
+ },
+ "route3_fallback": {
+  "hidden_enum_population": {
+   "cases": 84,
+   "choice_counts": {
+    "2": 5,
+    "3": 24,
+    "4": 3
+   },
+   "detector_silent_templates": 2,
+   "guess_changed_cases": 39,
+   "guess_changed_templates": 13,
+   "templates": 32
+  },
+  "hidden_numbers_per_question": {
+   "beyond_skeleton_operand_window": 102,
+   "mean": 7.259,
+   "median": 6.5
+  },
+  "residual_arm_prior": {
+   "caveat": "the labelled corpus states its residual arm with 'otherwise' or leaves it unnamed; the 'when neither qualifies' form that covers most of the hidden application never occurs in it",
+   "guess_non_residual_arm": 0.477273,
+   "guess_residual_arm": 0.375,
+   "instances": 176,
+   "protocol": "the detector reads only the target question's own decision list and fits nothing, so leave-one-template-out holds by construction",
+   "units_fired": 16,
+   "units_total": 38,
+   "units_where_avoiding_is_no_worse": 10
+  },
+  "skeleton_family_oracle_ceiling_int_adv": {
+   "finals": {
+    "hits": 4,
+    "n": 160,
+    "rate": 0.025
+   },
+   "note": "share of labelled intermediate/advanced outputs that SOME skeleton and operand binding reproduces on all 11 instances; an oracle upper bound on any selector over this family",
+   "slots": {
+    "hits": 136,
+    "n": 379,
+    "rate": 0.358839
+   }
+  }
+ }
+}

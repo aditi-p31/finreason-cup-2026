@@ -1,0 +1,104 @@
+finreason-solution
+Copyright 2026 Aditi Patodiya
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+It is the Task 1 solution of team "Patodiya Research" in the FinReason Cup at
+IEEE BigData 2026.
+
+This product reads, transcribes from, or calls the third-party material listed
+below. Names of the cup, its organizers and IEEE identify that material only.
+They do not imply endorsement.
+
+
+1. FinReason Cup Task 1 data (CC BY 4.0)
+----------------------------------------
+
+Source:  FinReason Cup Task 1 release, dataset version task1-v4
+         (test release identity task1-v4-test-questions-20260901-r2),
+         published by the FinReason Cup organizers (public display name
+         The Fin AI).
+         Canonical URL: https://the-finai.github.io/IEEE-bigdata-cup/task1/
+         Repository:    https://github.com/The-FinAI/IEEE-bigdata-cup
+                        (public/task1/data/)
+Licence: Creative Commons Attribution 4.0 International
+         https://creativecommons.org/licenses/by/4.0/
+         (scope: the exact data allowlist in the cup's
+         public/task1/RIGHTS_AND_PROVENANCE.md)
+
+This product does not contain or redistribute the data files. The pipeline
+reads them in place from the user's own checkout of the repository above.
+
+Changes were made. The solver artifacts in artifacts/, the reports in
+docs/results/ and some test fixtures are derived from the train, dev,
+leaderboard and test files of the release. Gold values come from the train and
+dev files only. The leaderboard and test questions carry no labels; they were
+used for the shape-coverage and hidden-stratum counts in the measurement
+reports, for the test fixtures, and to select which search-fitted components
+stage 5 replaces. shape_index.json holds the question wording with every
+number masked, keyed to template ids; fallback_model.json holds tokenised
+trace-slot descriptions, template ids and majority enum labels; solvers.json
+holds template ids and the arithmetic programs fitted to the gold values;
+dev_predictions.jsonl holds dev case ids with the values this product computes
+for them; the measurement reports hold case ids, input-file sha256 digests and
+aggregate counts; tests/ holds a few leaderboard and test case ids with
+phrases from their questions and values worked out by hand from that text.
+Numbers were masked, text was tokenised, and gold values were replaced by
+fitted programs and computed outputs.
+
+The hidden-stratum forms in this bundle (src/finreason_solver/hiddenforms/
+and hidden/forms/final/) are also derived from the test release: each form
+quotes phrases of its template's test questions with the numbers masked and
+computes the recipe the question states; routes.json holds the masked
+question shapes. hidden/templates.json, which holds the test questions
+verbatim, is not included. The workspace notes in hidden/README.md quote one
+test question in full as a worked example, and some form docstrings quote the
+numbers of individual draws; both come from the organizers' CC BY 4.0 release.
+
+
+2. FinChain generator source (Apache-2.0)
+-----------------------------------------
+
+Source:  FinChain, https://github.com/mbzuai-nlp/finchain
+         Copyright (c) FINCHAIN contributors.
+Licence: Apache License, Version 2.0 (upstream LICENSE, added in upstream
+         commit 9bd2942b85d992844b77094a8b822aa16832703c on 2026-09-17).
+
+The closed forms in src/finreason_solver/genforms.py (stage 4) were
+transcribed by reading the FinChain generator functions they name. The
+reference forms in src/finreason_solver/refforms.py (stage 5) write down the
+recipe stated in the cup's question text, with the FinChain generator read
+alongside wherever the wording left a choice. The tree read is FinChain commit
+146eaa8225bf867fe7386c2d4727b59e03170235, the commit pinned in the cup's
+public/task1/RIGHTS_AND_PROVENANCE.md. That tree carries no licence file. The
+licence commit 9bd2942b is its direct child and changes only LICENSE and
+readme.md, so the source read is the source the upstream licence covers.
+
+Changes were made: each computation was rewritten in this product's own
+exact-arithmetic expression language over the numbers lifted from the cup's
+question text, and where the cup's wording diverges from the generator, the
+cup's gold values were followed. No FinChain file is included, no FinChain
+code is executed, and FinChain is not an input to the build. Upstream ships no
+NOTICE file.
+
+Citation: Xie et al., "FinChain: A Symbolic Benchmark for Verifiable
+Chain-of-Thought Financial Reasoning", ACL 2026, pp. 14529-14553,
+doi:10.18653/v1/2026.acl-long.662.
+
+
+3. FinReason Cup participant tools (Apache-2.0)
+-----------------------------------------------
+
+Source:  https://github.com/The-FinAI/IEEE-bigdata-cup
+         finreason_task1/admission.py, finreason_task1/baseline_b1.py,
+         finreason_task1/contracts.py, finreason_task1/leaderboard.py,
+         finreason_task1/scoring.py, scripts/task1_cli.py
+Licence: Apache License, Version 2.0, per the exact code allowlist in the
+         cup's public/task1/RIGHTS_AND_PROVENANCE.md.
+
+This product does not include, vendor or modify these files. Scoring,
+validation, packaging and leaderboard admission are performed by running
+scripts/task1_cli.py from the user's checkout as a subprocess
+(src/finreason_solver/official.py). The tests and scripts/degeneracy_audit.py
+import finreason_task1 from the same checkout. The checkout is located through
+the FINREASON_CUP_REPO environment variable (default: ../IEEE-bigdata-cup next
+to this directory).

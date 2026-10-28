@@ -1,0 +1,5 @@
+# Runtime: none. The solver pipeline uses only the Python 3.11 standard library
+# (fractions, decimal, json, re, concurrent.futures).
+#
+# Test/dev only:
+pytest==9.1.1

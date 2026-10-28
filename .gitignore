@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+.pytest_cache/
+.DS_Store
+out/
+rebuild/
+IEEE-bigdata-cup/
+finchain/
+task3/kit/
+task3/reproduced/
+task1/artifacts_holdout/

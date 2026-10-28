@@ -1,0 +1,14 @@
+{
+ "final_answer": {
+  "accuracy": 0.486364,
+  "cases": 220,
+  "correct": 107
+ },
+ "protocol": "leave-one-instance-out within each template (11 folds)",
+ "slots": {
+  "accuracy": 0.489899,
+  "correct": 97,
+  "slots": 198
+ },
+ "templates_with_enum_outputs": 21
+}
