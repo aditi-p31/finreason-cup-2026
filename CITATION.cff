@@ -2,9 +2,11 @@ cff-version: 1.2.0
 message: If you use this software, please cite the paper below, and cite the FinReason Cup overviews, FinChain,
   Herculean and FinAuditing as the organizers request (see the task READMEs).
 title: 'finreason-cup-2026: executable financial reasoning for the FinReason Cup 2026 (Tasks 1 and 3)'
-version: '0.1'
+version: '1.0.1'
 license: Apache-2.0
 type: software
+doi: 10.5281/zenodo.23720135
+repository-code: 'https://github.com/aditi-p31/finreason-cup-2026'
 authors:
 - given-names: Aditi
   family-names: Patodiya

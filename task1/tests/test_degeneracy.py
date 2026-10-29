@@ -132,7 +132,7 @@ def test_integrated_build_agrees_with_every_reference_on_every_unseen_draw(
 
 def test_stage5_keeps_every_template_shippable_and_is_idempotent(integrated: dict) -> None:
     assert all(build_solvers.is_shippable(p) for tid, p in integrated.items()
-               if tid not in TEXT_ONLY) or True
+               if tid not in TEXT_ONLY)
     before = sum(1 for p in integrated.values() if build_solvers.is_shippable(p))
     again = copy.deepcopy(integrated)
     assert build_solvers.apply_reference_forms(again) == []

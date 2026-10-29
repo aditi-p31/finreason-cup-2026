@@ -10,8 +10,9 @@ relationships say it should be. The engine re-runs the three public XBRL US
 data-quality rules behind the task (DQC_US_0015 negative values, DQC_US_0117
 dimensional cross check, DQC_US_0126 calculation check) on the text of the
 case, inside each rule's own scope and tolerance, and reports the finding.
-It reads only the case's `query` string. It calls no language model, uses no
-network and needs only the Python standard library.
+It reads only the case's `query` string, which carries the filing excerpt
+(instance document and linkbases) as well as the question. It calls no
+language model, uses no network and needs only the Python standard library.
 
 It is the Task 3 entry of team "Patodiya Research" (Aditi Patodiya) and
 accompanies the team's FinReason Cup working-notes paper.
@@ -114,6 +115,13 @@ the 23 holdout cases with an unseen filer, 22.73% on the 22 identical-query
 cases, and 55.34% on the holdout without the 8 exact duplicates. Details:
 `docs/PRACTICE-HOLDOUT.md`.
 
+Some practice cases cannot be told apart from their input at all: 17 groups of
+byte-identical queries (32 cases under DQC_US_0015, 15 under DQC_US_0117) carry
+different gold pairs, so no deterministic system that reads only the query can
+match more than 308 of the 332 exactly (92.77%). `tools/query_identifiability.py`
+computes this bound; it concerns the practice inputs and exact matching of both
+numbers, not the development or test sets.
+
 ## Compliance
 
 - At prediction time the engine reads only each case's `query` (the `id` is
@@ -138,6 +146,7 @@ cases, and 55.34% on the holdout without the 8 exact duplicates. Details:
 | `tools/score_split.py` | practice scoring with the kit's deterministic judge |
 | `tools/make_split.py`, `split.json` | the build/holdout split of the practice set |
 | `tools/holdout_overlap.py` | holdout overlap counts (and per-subset scores) |
+| `tools/query_identifiability.py` | identical practice queries with different gold, and the bound they set |
 | `docs/PRACTICE-HOLDOUT.md` | the practice estimate and the overlap counts |
 | `REPRODUCE.md` | inputs, the one command, earlier variants, checks |
 | `LICENSE`, `NOTICE` | Apache-2.0; third-party attribution and licences |

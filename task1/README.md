@@ -325,6 +325,7 @@ requires; final answers are rounded half-up to the case's `answer_spec`.
 | `src/finreason_solver/fallback.py`, `predict.py`, `official.py` | guess policy, prediction files, organizer CLI wrapper |
 | `tests/` | the test suite |
 | `scripts/` | measurement scripts behind the paper's numbers (baselines, fallback and enum-prior estimates, tokeniser ablation, generator-form evidence, degeneracy audit, hidden-stratum route counts) and `compare_artifacts.py` |
+| `docs/holdout/`, `scripts/holdout_comparison.py` | the archived 5 September builds and 7 September test archive, and the command that recomputes the paper's coincidence counts from them |
 | `artifacts/` | shipped solver artifacts, dev predictions, measurement reports |
 | `docs/results/` | pipeline reports with paths made relative to the package root |
 | `docs/inputs.sha256` | checksums of every cup file the pipeline and its tests read or run |

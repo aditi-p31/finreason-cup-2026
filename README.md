@@ -18,10 +18,13 @@ inputs and the expected hashes.
 
 ## Results under the organizers' evaluation
 
-- Task 1: 1.000 final-answer and 1.000 reasoning-step score on the 580-case
+- Task 1: rank 4 of 27 on the 928-case test set
+  ([official results](https://the-finai.github.io/IEEE-bigdata-cup/task1/leaderboard/test/)):
+  combined final-answer score 0.999167, hidden-stratum final-answer score 1.000000 and
+  combined reasoning-step score 0.995417, with 927 of 928 final answers correct, a count
+  no team exceeds. On the 580-case
   [development leaderboard](https://the-finai.github.io/IEEE-bigdata-cup/task1/leaderboard/),
-  whose gold is withheld. Official test results will be added here when the organizers
-  publish them.
+  whose gold is withheld, it scores 1.000 on final answers and on reasoning steps.
 - Task 3: 96.62% accuracy on the 680-case held-out test set under the official judge,
   rank 5 of 23 teams ([results](https://the-finai.github.io/IEEE-bigdata-cup/task3/leaderboard/)).
 
@@ -50,5 +53,7 @@ Task 3 engine re-implements. Forms written from the public FinChain generator so
 
 ## Citation
 
+The code is archived on Zenodo, all versions under
+[doi:10.5281/zenodo.23720135](https://doi.org/10.5281/zenodo.23720135).
 Please cite the paper (see `CITATION.cff`), and the FinReason Cup overviews, FinChain,
 Herculean and FinAuditing as the organizers request (BibTeX in the task READMEs).

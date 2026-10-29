@@ -182,6 +182,12 @@ code, before stages 4 and 5 existed (`seen_fac` 0.9493, `seen_checkpoint`
 0.9820). The current code adds those two stages, so a fresh held-out build is
 not expected to reproduce that report exactly.
 
+The two 5 September builds themselves, and the test archive the first one
+produced, are archived in `docs/holdout/`. `scripts/holdout_comparison.py`
+recomputes the paper's coincidence counts from them (Table III and Section
+IV-C) without a rebuild; `docs/holdout/README.md` gives the command and the
+expected output.
+
 ## 9. Measurement scripts
 
 Each script under `scripts/` regenerates one report and states its output in
