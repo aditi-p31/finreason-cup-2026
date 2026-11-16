@@ -42,7 +42,22 @@ The 116 programs in `task1/hidden/forms/final/` answer the Task 1 templates that
 released instance covers. An AI assistant transcribed each question's stated calculation
 into a small deterministic program under the author's direction, and the author reviewed
 every program. `task1/HIDDEN-FORMS.md` documents the checks and the one command that
-reproduces the ranked archive from them.
+reproduces the ranked archive from them. `task1/hidden/PROMPTS.md` holds the recorded
+prompts of the workflows that wrote and checked the programs, and
+`task1/hidden/BUILD-RECORD.md` the models, usage and outcomes of those runs.
+
+## Release notes
+
+- **1.0.2** (documentation only; no code, solver artifact or prediction
+  changed): `task1/hidden/PROMPTS.md`, the recorded prompts of the workflows
+  that wrote and checked the 116 hidden-template programs;
+  `task1/hidden/BUILD-RECORD.md`, the record of those runs (models, wall clock,
+  tokens, agreement, audits, re-check, author review, prediction time); two
+  details of the search loop in `task1/README.md`; and the official Task 3
+  test scores per rule in `task3/README.md`. The two MANIFEST.txt files list
+  the new and changed files.
+
+Earlier versions are listed under the concept DOI below.
 
 ## Licence
 

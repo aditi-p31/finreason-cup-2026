@@ -45,7 +45,10 @@ Released after the test-submission deadline (25 October 2026, 23:59 AoE).
   and the test predictions whose digest is listed under
   [Expected outputs](#expected-outputs) were made that way. With it on, the
   pipeline reproduces the ranked test submission (accepted 21 October 2026):
-  `scripts/reproduce_ranked.sh` rebuilds it and checks its sha256.
+  `scripts/reproduce_ranked.sh` rebuilds it and checks its sha256. The
+  prompts of the workflows that wrote and checked the forms are in
+  `hidden/PROMPTS.md`, verbatim, and the runs, models and audit outcomes in
+  `hidden/BUILD-RECORD.md`.
 - **Development history.** The build and submission logs and the working
   notes are not part of this release. They are available from the author on
   request.
@@ -291,7 +294,10 @@ previous ones left unsolved, except stage 5, which revisits solved ones.
    1, two rates that are always equal), so a wrong program can reproduce every
    gold value. `scripts/degeneracy_audit.py` finds them; for those templates
    the recipe stated in the question text replaces the search's program,
-   provided it passes the same eleven-instance gate. 36 templates.
+   provided it passes the same eleven-instance gate. 36 templates. Stage 5
+   leaves the practice predictions byte-identical, since each replacement
+   reproduces the practice instance; the seven generator forms of stage 4 are
+   what complete the practice split.
 
 **Ship gate.** `derive.contract_test` replays every solver against all eleven
 gold instances, per component: a trace slot is used only if it reproduced all
@@ -310,6 +316,17 @@ question's own decision list does not mark as its residual arm.
 **Serialisation.** Terminating values are written as finite decimals and
 non-terminating ones as irreducible `a/b` rationals, as the cup contract
 requires; final answers are rounded half-up to the case's `answer_spec`.
+
+### Two details of the search loop
+
+A slot the search cannot derive still passes its gold vector on to the slots
+after it, so they stay derivable; any component that depends on the
+underivable slot fails the gate and is not used.
+
+The results of stage 2 and stage 3 are merged component by component
+(`build_solvers._merge_components`), and the merged solver gets a fresh
+eleven-instance test. A slot found by one stage and a final found by the other
+therefore ship as one solver.
 
 ## Repository layout
 
@@ -332,6 +349,7 @@ requires; final answers are rounded half-up to the case's `answer_spec`.
 | `REPRODUCE.md` | step-by-step reproduction and verification |
 | `scripts/reproduce_ranked.sh`, `HIDDEN-FORMS.md` | the one command for the ranked entry, and the hidden-stratum route it switches on |
 | `src/finreason_solver/hiddenforms/`, `hidden/` | the route, the 116 reviewed forms and their tooling |
+| `hidden/PROMPTS.md`, `hidden/BUILD-RECORD.md` | the recorded prompts of the workflows that wrote and checked the forms, and the record of those runs |
 | `accepted_20261021/test_predictions.jsonl` | the ranked test predictions, for the byte comparison |
 | `LICENSE`, `NOTICE`, `CITATION.cff` | licence, third-party attribution, citation metadata |
 

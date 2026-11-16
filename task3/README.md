@@ -99,6 +99,71 @@ REPRODUCE.md step 1 gives the commands and the sha256 of each file.
 `engine/run.py --trace` writes the mechanism, evidence tier and detail of
 every answer.
 
+## Test results by rule
+
+The organizers' results file for the test phase
+(`app/task3/leaderboard/test-results.json` in
+[The-FinAI/IEEE-bigdata-cup](https://github.com/The-FinAI/IEEE-bigdata-cup),
+published 27 October 2026) gives this entry's accuracy per rule under the
+official judge (gpt-5-mini, prompt `finmr-judge-v1`, evaluation 1.1). With the
+rule case counts in the same file, the accuracies give these counts:
+
+| rule | test cases | correct | accuracy |
+| --- | ---: | ---: | ---: |
+| DQC_US_0126 | 464 | 464 | 100.00% |
+| DQC_US_0015 | 162 | 147 | 90.74% |
+| DQC_US_0117 | 54 | 46 | 85.19% |
+| all | 680 | 657 | 96.62% |
+
+Test answers are withheld, so no test miss can be traced to a case. Two groups
+of test answers mark where the engine makes a choice the rule does not fix, or
+answers from weaker evidence. They are diagnostic groups, not identified
+errors:
+
+- **DQC_US_0015 fact selection: 22 test answers (19 on development).** When
+  several negative facts qualify, the rule reports each of them and ranks none.
+  The final entry keeps the non-dimensional fact, else the first in document
+  order. Across the other eleven `--neg-policy` choices, 22 test answers
+  change at least once; 21 are DQC_US_0015 rule findings and one is the tier-4
+  answer in the next group. On development, the last-in-order and largest-magnitude
+  policies both scored lower (REPRODUCE.md, section 4).
+- **Evidence outside the implemented scopes: 11 test answers (2 on
+  development).** 10 come from tier 2 (a dimensional difference beyond
+  tolerance outside the rule's networks) and 1 from tier 4 (a negative value
+  of an element not on the DQC_US_0015 list). Every other test answer is a
+  tier-1 rule finding. On development the 2 are both tier 2.
+
+Both counts come from the final entry's own files: the tiers from
+`reproduced/V1/test_trace.jsonl` and `development_trace.jsonl`, which
+`python3 reproduce.py` writes, and the policy count by rerunning the engine:
+
+```
+python3 - <<'PY'
+import json, collections
+for phase in ("test", "development"):
+    rows = [json.loads(l) for l in open(f"reproduced/V1/{phase}_trace.jsonl")]
+    print(phase, sorted(collections.Counter(r["tier"] for r in rows).items()))
+PY
+mkdir -p policy
+for p in nondim dim none; do for o in first last maxabs minabs; do
+  python3 engine/run.py --input kit/data/test_inputs.jsonl \
+    --output "policy/test_${p}_${o}.jsonl" --fix a10093 --neg-policy "$p,$o"
+done; done
+python3 - <<'PY'
+import glob, json
+base = {json.loads(l)["id"]: l for l in open("reproduced/V1/test/predictions.jsonl")}
+changed = set()
+for f in glob.glob("policy/test_*.jsonl"):
+    other = {json.loads(l)["id"]: l for l in open(f)}
+    changed |= {k for k in base if other[k] != base[k]}
+print(len(changed))
+PY
+```
+
+The first part prints `[(1, 669), (2, 10), (4, 1)]` for test and
+`[(1, 678), (2, 2)]` for development; the last prints 22 (19 when run on
+`development_inputs.jsonl` against the development file).
+
 ## Practice estimate
 
 The 332 public practice cases were split once, by a salted hash of the case id

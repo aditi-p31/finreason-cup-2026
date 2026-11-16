@@ -49,6 +49,12 @@ The paper says, in its section on the hidden-stratum programs:
 as it was used with a dated release note at its top. Its rule 1 ("You are the
 transcriber") is addressed to the assistant.
 
+`hidden/PROMPTS.md` holds the prompts of the five workflows that wrote,
+audited and re-checked the forms, copied verbatim from the local workflow
+records with only local paths redacted. `hidden/BUILD-RECORD.md` gives, for
+each run, the date, the agents by role and model, wall clock, tokens and tool
+calls, and the adjudication, audit and re-check outcomes.
+
 ## What the hidden-stratum route adds
 
 | path | contents |
@@ -59,6 +65,7 @@ transcriber") is addressed to the assistant.
 | `src/finreason_solver/hiddenforms/routes.json` | each template's route shape, and the sha256 of every form and of the helper |
 | `hidden/forms/final/HNNN.py`, `hidden/hlib.py` | the reviewed forms and helper; the package copies are byte-identical |
 | `hidden/README.md` | how the forms were written and checked |
+| `hidden/PROMPTS.md`, `hidden/BUILD-RECORD.md` | the recorded workflow prompts, and the run record with models, usage and outcomes |
 | `hidden/run_forms.py`, `hidden/compare.py` | the form runner (with its static lint) and the run comparison |
 | `hidden/build_templates.py`, `hidden/build_candidate.py`, `hidden/export_forms.py` | template grouping, the script that built the accepted archive, the copy into the package |
 | `tests/test_hiddenforms.py` | routing, pins, flag handling, byte identity with the route off and on |
